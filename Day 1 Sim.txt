@@ -1,0 +1,3645 @@
+PC1 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 29
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+WINDOWS SERVER 2022
+ 
+############################################################
+ 
+Windows Server 2022 introduces advanced multi-layer security, 
+hybrid capabilities with Azure, and a flexible 
+application platform.
+ 
+It includes significant improvements to Windows containers, 
+such as smaller image sizes for faster download, simplified 
+network policy implementation and containerization tools for 
+.NET applications.
+ 
+############################################################
+ 
+ 
+ 
+PASSWORD: C1sc0123
+ 
+ 
+
+WinServer2022-PC>en
+Password: 
+WinServer2022-PC#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+WinServer2022-PC(config)# ip routing
+WinServer2022-PC(config)# ip route 10.0.0.0 255.0.0.0 10.81.1.4
+WinServer2022-PC(config)# ip route 200.0.0.0 255.255.255.0 10.81.1.4
+WinServer2022-PC(config)# end
+WinServer2022-PC#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is 10.3.3.1 to network 0.0.0.0
+
+S*    0.0.0.0/0 [1/0] via 10.3.3.1
+      10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks
+S        10.0.0.0/8 [1/0] via 10.81.1.4
+C        10.3.3.0/24 is directly connected, Loopback1
+L        10.3.3.101/32 is directly connected, Loopback1
+C        10.81.1.0/24 is directly connected, Ethernet0/0
+L        10.81.1.10/32 is directly connected, Ethernet0/0
+S     200.0.0.0/24 [1/0] via 10.81.1.4
+WinServer2022-PC#ping 10.92.1.10
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.92.1.10, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+WinServer2022-PC#!ping must be successful
+WinServer2022-PC#!
+WinServer2022-PC#traceroute 10.92.1.10
+Type escape sequence to abort.
+Tracing the route to windowsServer-m92.RIVANTraining.com (10.92.1.10)
+VRF info: (vrf in name/id, vrf out name/id)
+  1 c3560cg.l3-coreBABA-v1.RIVANTraining.com (10.81.1.4) 0 msec 1 msec 0 msec
+  2 4321xrEdge-e00.RIVANTraining.com (10.81.81.1) 0 msec 1 msec 0 msec
+  3 4321xrEdge-m92-e01.RIVANTraining.com (200.0.0.92) 0 msec 0 msec 0 msec
+  4 c3560cg.l3-m92-e20.RIVANTraining.com (10.92.92.4) 1 msec 1 msec 0 msec
+  5 windowsServer-m92.RIVANTraining.com (10.92.1.10) 0 msec *  1 msec
+WinServer2022-PC#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !PC
+WinServer2022-PC(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !CoreTAAS
+WinServer2022-PC(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2   
+WinServer2022-PC(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2 
+WinServer2022-PC(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2 
+WinServer2022-PC(config)#$oreTAAS-v100.RIVANTraining.com 10.81.100.2         
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !CoreBABA
+WinServer2022-PC(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4   
+WinServer2022-PC(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4 
+WinServer2022-PC(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4 
+WinServer2022-PC(config)#$oreBABA-v100.RIVANTraining.com 10.81.100.4         
+WinServer2022-PC(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4 
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !wlc
+WinServer2022-PC(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !ap
+WinServer2022-PC(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !cucm
+WinServer2022-PC(config)#$cm-Express9.1.RIVANTraining.com 10.81.100.8        
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !eP1
+WinServer2022-PC(config)#$45ipPhone1.RIVANTraining.com 10.81.100.101         
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !eP2
+WinServer2022-PC(config)#$45ipPhone2.RIVANTraining.com 10.81.100.102         
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !c8
+WinServer2022-PC(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !c6
+WinServer2022-PC(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !edge
+WinServer2022-PC(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+WinServer2022-PC(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+WinServer2022-PC(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !edge92
+WinServer2022-PC(config)#$21xrEdge-m92-e01.RIVANTraining.com 200.0.0.92      
+WinServer2022-PC(config)#$21xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1        
+WinServer2022-PC(config)#$21xrEdge-m92-e00.RIVANTraining.com 10.92.92.1      
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !CoreBABA92
+WinServer2022-PC(config)#$560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4      
+WinServer2022-PC(config)#$560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4        
+WinServer2022-PC(config)#$560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4      
+WinServer2022-PC(config)#$560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4      
+WinServer2022-PC(config)#$560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4    
+WinServer2022-PC(config)# !
+WinServer2022-PC(config)# !P92
+WinServer2022-PC(config)#$ndowsServer-m92.RIVANTraining.com 10.92.1.10       
+WinServer2022-PC(config)# end
+WinServer2022-PC#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+WinServer2022-PC(config)# hostname WinServer2022-PC
+WinServer2022-PC(config)# enable secret C1sc0123
+WinServer2022-PC(config)# service password-encryption
+WinServer2022-PC(config)# no logging cons
+WinServer2022-PC(config)# no ip domain lookup
+WinServer2022-PC(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+WINDOWS SERVER 2022
+ 
+############################################################
+ 
+Windows Server 2022 introduces advanced multi-layer security, 
+hybrid capabilities with Azure, and a flexible 
+application platform.
+ 
+It includes significant improvements to Windows containers, 
+such as smaller image sizes for faster download, simplified 
+network policy implementation and containerization tools for 
+.NET applications.
+ 
+############################################################
+ 
+ 
+ 
+PASSWORD: C1sc0123
+ 
+ 
+|
+WinServer2022-PC(config)# line cons 0
+WinServer2022-PC(config-line)#  password C1sc0123
+WinServer2022-PC(config-line)#  no login
+WinServer2022-PC(config-line)#  exec-timeout 0 0
+WinServer2022-PC(config-line)# line vty 0 4
+WinServer2022-PC(config-line)#  password C1sc0123
+WinServer2022-PC(config-line)#  login
+WinServer2022-PC(config-line)#  exec-timeout 0 0
+WinServer2022-PC(config-line)# int lo 1
+WinServer2022-PC(config-if)#  ip add 10.3.3.101 255.255.255.0
+WinServer2022-PC(config-if)#  no shut
+WinServer2022-PC(config-if)# int e0/0
+WinServer2022-PC(config-if)#  ip add 10.81.1.10 255.255.255.0
+WinServer2022-PC(config-if)#  no shut
+WinServer2022-PC(config-if)# ip route 0.0.0.0 0.0.0.0 10.3.3.1
+WinServer2022-PC(config)# end
+WinServer2022-PC#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+WLC ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 32
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco Aironet 1815i Access Point
+ 
+############################################################
+ 
+The Cisco Aironet 1815i delivers industry-leading wireless 
+performance with support for the latest Wi-Fi standard, 
+IEEE's 802.11ac Wave 2. It also meets the growing 
+requirements of wireless networks by delivering a better 
+user experience.
+ 
+Ideal for small and medium-sized networks, 
+the CiscoB. AironetB. 1815i Access Point brings a full slate of 
+Cisco high-performance functionality to the enterprise environment.
+The 1815i extends support to a new generation of Wi-Fi clients, 
+such as smartphones, tablets, and high-performance laptops that 
+have integrated 802.11ac Wave 1 or Wave 2 support.
+ 
+############################################################
+ 
+ 
+ 
+USERNAME: admin
+PASSWORD: pass
+ 
+ 
+
+
+User Access Verification
+
+Username: 
+Username: admin
+Password: 
+% Login invalid
+
+Username: admin
+Password: 
+aironet-wlc#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+aironet-wlc(config)# !
+aironet-wlc(config)# !PC
+aironet-wlc(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+aironet-wlc(config)# !
+aironet-wlc(config)# !CoreTAAS
+aironet-wlc(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2        
+aironet-wlc(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2      
+aironet-wlc(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2      
+aironet-wlc(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2    
+aironet-wlc(config)# !
+aironet-wlc(config)# !CoreBABA
+aironet-wlc(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4        
+aironet-wlc(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4      
+aironet-wlc(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4      
+aironet-wlc(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4    
+aironet-wlc(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4      
+aironet-wlc(config)# !
+aironet-wlc(config)# !wlc
+aironet-wlc(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+aironet-wlc(config)# !
+aironet-wlc(config)# !ap
+aironet-wlc(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+aironet-wlc(config)# !
+aironet-wlc(config)# !cucm
+aironet-wlc(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+aironet-wlc(config)# !
+aironet-wlc(config)# !eP1
+aironet-wlc(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+aironet-wlc(config)# !
+aironet-wlc(config)# !eP2
+aironet-wlc(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+aironet-wlc(config)# !
+aironet-wlc(config)# !c8
+aironet-wlc(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+aironet-wlc(config)# !
+aironet-wlc(config)# !c6
+aironet-wlc(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+aironet-wlc(config)# !
+aironet-wlc(config)# !edge
+aironet-wlc(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+aironet-wlc(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+aironet-wlc(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+aironet-wlc(config)# !
+aironet-wlc(config)# !edge92
+aironet-wlc(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+aironet-wlc(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+aironet-wlc(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+aironet-wlc(config)# !
+aironet-wlc(config)# !CoreBABA92
+aironet-wlc(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+aironet-wlc(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+aironet-wlc(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+aironet-wlc(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+aironet-wlc(config)#$560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4         
+aironet-wlc(config)# !
+aironet-wlc(config)# !P92
+aironet-wlc(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+aironet-wlc(config)# end
+aironet-wlc#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+aironet-wlc(config)# hostname aironet-wlc
+aironet-wlc(config)# enable secret pass
+aironet-wlc(config)# service password-encryption
+aironet-wlc(config)# no logging cons
+aironet-wlc(config)# no ip domain lookup
+aironet-wlc(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Aironet 1815i Access Point
+ 
+############################################################
+ 
+The Cisco Aironet 1815i delivers industry-leading wireless 
+performance with support for the latest Wi-Fi standard, 
+IEEE's 802.11ac Wave 2. It also meets the growing 
+requirements of wireless networks by delivering a better 
+user experience.
+ 
+Ideal for small and medium-sized networks, 
+the CiscoB. AironetB. 1815i Access Point brings a full slate of 
+Cisco high-performance functionality to the enterprise environment.
+The 1815i extends support to a new generation of Wi-Fi clients, 
+such as smartphones, tablets, and high-performance laptops that 
+have integrated 802.11ac Wave 1 or Wave 2 support.
+ 
+############################################################
+ 
+ 
+ 
+USERNAME: admin
+PASSWORD: pass
+ 
+ 
+|
+aironet-wlc(config)# username admin privilege 15 secret pass
+aironet-wlc(config)# line cons 0
+aironet-wlc(config-line)#  password pass
+aironet-wlc(config-line)#  login local
+aironet-wlc(config-line)#  exec-timeout 0 0
+aironet-wlc(config-line)# line vty 0 4
+aironet-wlc(config-line)#  transport input all
+aironet-wlc(config-line)#  password pass
+aironet-wlc(config-line)#  login local
+aironet-wlc(config-line)#  exec-timeout 0 0
+aironet-wlc(config-line)# int e0/0
+aironet-wlc(config-if)#  ip add 10.81.10.81 255.255.255.0
+aironet-wlc(config-if)#  no shut
+aironet-wlc(config-if)# ip route 0.0.0.0 0.0.0.0 10.81.10.4
+aironet-wlc(config)# end
+aironet-wlc#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+AP ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 33
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco Aironet 2702i Access Point
+ 
+############################################################
+ 
+The CiscoB. AironetB. 2700 Series of Wi-Fi access points (APs) 
+delivers industry-leading 802.11ac performance at a price point 
+ideal for plugging capacity and coverage gaps in dense 
+indoor environments.
+ 
+The Aironet 2700 series supports 802.11ac Wave 1 
+In its first implementation, providing a theoretical connection 
+rate of up to 1.3 Gbps. 
+ 
+That is roughly triple the rates offered by today's high-end 
+802.11n APs.
+ 
+############################################################
+ 
+ 
+ 
+USERNAME: admin
+PASSWORD: pass
+ 
+ 
+
+
+User Access Verification
+
+Username: admin
+Password: 
+aironet-ap#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+aironet-ap(config)# !
+aironet-ap(config)# !PC
+aironet-ap(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+aironet-ap(config)# !
+aironet-ap(config)# !CoreTAAS
+aironet-ap(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2         
+aironet-ap(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2       
+aironet-ap(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2       
+aironet-ap(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2     
+aironet-ap(config)# !
+aironet-ap(config)# !CoreBABA
+aironet-ap(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4         
+aironet-ap(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4       
+aironet-ap(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4       
+aironet-ap(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4     
+aironet-ap(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4       
+aironet-ap(config)# !
+aironet-ap(config)# !wlc
+aironet-ap(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+aironet-ap(config)# !
+aironet-ap(config)# !ap
+aironet-ap(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+aironet-ap(config)# !
+aironet-ap(config)# !cucm
+aironet-ap(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+aironet-ap(config)# !
+aironet-ap(config)# !eP1
+aironet-ap(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+aironet-ap(config)# !
+aironet-ap(config)# !eP2
+aironet-ap(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+aironet-ap(config)# !
+aironet-ap(config)# !c8
+aironet-ap(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+aironet-ap(config)# !
+aironet-ap(config)# !c6
+aironet-ap(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+aironet-ap(config)# !
+aironet-ap(config)# !edge
+aironet-ap(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+aironet-ap(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+aironet-ap(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+aironet-ap(config)# !
+aironet-ap(config)# !edge92
+aironet-ap(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+aironet-ap(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+aironet-ap(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+aironet-ap(config)# !
+aironet-ap(config)# !CoreBABA92
+aironet-ap(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+aironet-ap(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+aironet-ap(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+aironet-ap(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+aironet-ap(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+aironet-ap(config)# !
+aironet-ap(config)# !P92
+aironet-ap(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+aironet-ap(config)# end
+aironet-ap#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+aironet-ap(config)# hostname aironet-ap
+aironet-ap(config)# enable secret pass
+aironet-ap(config)# service password-encryption
+aironet-ap(config)# no logging cons
+aironet-ap(config)# no ip domain lookup
+aironet-ap(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Aironet 2702i Access Point
+ 
+############################################################
+ 
+The CiscoB. AironetB. 2700 Series of Wi-Fi access points (APs) 
+delivers industry-leading 802.11ac performance at a price point 
+ideal for plugging capacity and coverage gaps in dense 
+indoor environments.
+ 
+The Aironet 2700 series supports 802.11ac Wave 1 
+In its first implementation, providing a theoretical connection 
+rate of up to 1.3 Gbps. 
+ 
+That is roughly triple the rates offered by today's high-end 
+802.11n APs.
+ 
+############################################################
+ 
+ 
+ 
+USERNAME: admin
+PASSWORD: pass
+ 
+ 
+|
+aironet-ap(config)# username admin privilege 15 secret pass
+aironet-ap(config)# line cons 0
+aironet-ap(config-line)#  password pass
+aironet-ap(config-line)#  login local
+aironet-ap(config-line)#  exec-timeout 0 0
+aironet-ap(config-line)# line vty 0 4
+aironet-ap(config-line)#  transport input all
+aironet-ap(config-line)#  password pass
+aironet-ap(config-line)#  login local
+aironet-ap(config-line)#  exec-timeout 0 0
+aironet-ap(config-line)# int e0/0
+aironet-ap(config-if)#  ip add 10.81.10.3 255.255.255.0
+aironet-ap(config-if)#  no shut
+aironet-ap(config-if)# ip route 0.0.0.0 0.0.0.0 10.81.10.4
+aironet-ap(config)# end
+aironet-ap#
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+COREtaas ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Solaris Software (I86BI_LINUXL2-IPBASEK9-M), Experimental Version 15.1(20130509:024903) [dstivers-may8-2013-team_track 103]
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Wed 08-May-13 21:05 by dstivers
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 199881K bytes of memory.
+Processor board ID 30
+12 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+*Sep 19 12:45:36.363: %SPANTREE-5-EXTENDED_SYSID: Extended SysId enabled for type vlan
+*Sep 19 12:45:36.475: %SYS-5-CONFIG_I: Configured from memory by console
+*Sep 19 12:45:36.520: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, Solaris Software (I86BI_LINUXL2-IPBASEK9-M), Experimental Version 15.1(20130509:024903) [dstivers-may8-2013-team_track 103]
+Copyright (c) 1986-2013 by Cisco Systems, Inc.
+Compiled Wed 08-May-13 21:05 by dstivers
+*Sep 19 12:45:36.530: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Sep 19 12:45:36.530: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Sep 19 12:45:38.149: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Sep 19 12:45:38.153: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Sep 19 12:45:38.166: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Sep 19 12:45:38.170: %LINK-3-UPDOWN: Interface Ethernet0/3, changed state to up
+*Sep 19 12:45:38.183: %LINK-3-UPDOWN: Interface Ethernet1/0, changed state to up
+*Sep 19 12:45:38.195: %LINK-3-UPDOWN: Interface Ethernet1/1, changed state to up
+*Sep 19 12:45:38.200: %LINK-3-UPDOWN: Interface Ethernet1/2, changed state to up
+*Sep 19 12:45:38.212: %LINK-3-UPDOWN: Interface Ethernet1/3, changed state to up
+*Sep 19 12:45:38.217: %LINK-3-UPDOWN: Interface Ethernet2/0, changed state to up
+*Sep 19 12:45:38.230: %LINK-3-UPDOWN: Interface Ethernet2/1, changed state to up
+*Sep 19 12:45:38.234: %LINK-3-UPDOWN: Interface Ethernet2/2, changed state to up
+*Sep 19 12:45:38.246: %LINK-3-UPDOWN: Interface Ethernet2/3, changed state to up
+*Sep 19 12:45:39.153: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to up
+*Sep 19 12:45:39.153: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to up
+*Sep 19 12:45:39.170: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to up
+*Sep 19 12:45:39.170: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to up
+*Sep 19 12:45:39.191: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet1/0, changed state to up
+*Sep 19 12:45:39.199: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet1/1, changed state to up
+*Sep 19 12:45:39.207: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet1/2, changed state to up
+*Sep 19 12:45:39.216: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet1/3, changed state to up
+*Sep 19 12:45:39.220: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet2/0, changed state to up
+*Sep 19 12:45:39.236: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet2/1, changed state to up
+ 
+ 
+##############################
+ 
+Cisco Catalyst 3560 Switch
+ 
+############################################################
+ 
+The Cisco Catalyst 3560 Series is a line of fixed-configuration, 
+enterprise-class switches that include IEEE 802.3af and Cisco 
+prestandard Power over Ethernet (PoE) functionality in Fast Ethernet 
+and Gigabit Ethernet configurations.
+ 
+The Cisco Catalyst 3560 is an ideal access layer switch for small 
+enterprise LAN access or branch-office environments, combining both 
+10/100/1000 and PoE configurations for maximum productivity and 
+investment protection while enabling the deployment of new applications 
+such as IP telephony, wireless access, video surveillance, 
+building management systems, and remote video kiosks.
+  
+############################################################
+ 
+ 
+ 
+*NOTE: Refer to the lab description in the GUI for additional information
+and Solution for configurations.
+ 
+ 
+
+Switch>
+Switch>en 
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)# hostname COREtaas-81
+COREtaas-81(config)# enable secret pass
+COREtaas-81(config)# service password-encryption
+COREtaas-81(config)# no logging console
+COREtaas-81(config)# no ip domain-lookup
+COREtaas-81(config)# line console 0
+COREtaas-81(config-line)#  password pass
+COREtaas-81(config-line)#  login
+COREtaas-81(config-line)#  exec-timeout 0 0     
+COREtaas-81(config-line)#$ lab are limited to 5 (vty line 0 - vty line 4)    
+COREtaas-81(config-line)# line vty 0 4
+COREtaas-81(config-line)#  password pass
+COREtaas-81(config-line)#  login
+COREtaas-81(config-line)#  exec-timeout 0 0
+COREtaas-81(config-line)# Int Vlan 1
+COREtaas-81(config-if)#  no shutdown
+COREtaas-81(config-if)#  ip add 10.81.1.2 255.255.255.0
+COREtaas-81(config-if)#  description MGMTDATA
+COREtaas-81(config-if)# Int Vlan 10
+COREtaas-81(config-if)#  no shutdown
+COREtaas-81(config-if)#  ip add 10.81.10.2 255.255.255.0
+COREtaas-81(config-if)#  description WIRELESS
+COREtaas-81(config-if)# Int Vlan 50
+COREtaas-81(config-if)#  no shutdown
+COREtaas-81(config-if)#  ip add 10.81.50.2 255.255.255.0
+COREtaas-81(config-if)#  description IPCCTV
+COREtaas-81(config-if)# Int Vlan 100
+COREtaas-81(config-if)#  no shutdown
+COREtaas-81(config-if)#  ip add 10.81.100.2 255.255.255.0
+COREtaas-81(config-if)#  description VOICEVLAN
+COREtaas-81(config-if)#end
+COREtaas-81#show cdp neighbor
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+Switch           Eth 0/3           140              R S   Linux Uni Eth 0/3
+Switch           Eth 1/3           140              R S   Linux Uni Eth 1/3
+Switch           Eth 2/3           140              R S   Linux Uni Eth 2/3
+COREtaas-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREtaas-81(config)# Int Range e0/3,e1/3,e2/3
+COREtaas-81(config-if-range)#  no shutdown
+COREtaas-81(config-if-range)#  switchport trunk encapsulation Dot1Q
+COREtaas-81(config-if-range)#  switchport mode trunk
+COREtaas-81(config-if-range)# end
+COREtaas-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREtaas-81(config)# Int Range e0/3,e1/3,e2/3
+COREtaas-81(config-if-range)#  channel-group 1 mode active
+Creating a port-channel interface Port-channel 1
+
+COREtaas-81(config-if-range)#  channel-protocol Lacp
+COREtaas-81(config-if-range)#show cdp neighbor
+                               ^
+% Invalid input detected at '^' marker.
+
+COREtaas-81(config-if-range)#end
+COREtaas-81#show cdp neighbor
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+Switch           Eth 0/3           93               R S   Linux Uni Eth 0/3
+Switch           Eth 1/3           93               R S   Linux Uni Eth 1/3
+Switch           Eth 2/3           93               R S   Linux Uni Eth 2/3
+COREbaba-81      Eth 2/3           153              R S   Linux Uni Eth 2/3
+COREbaba-81      Eth 1/3           153              R S   Linux Uni Eth 1/3
+COREbaba-81      Eth 0/3           153              R S   Linux Uni Eth 0/3
+COREtaas-81#show etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 1
+Number of aggregators:           1
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+1      Po1(SU)         LACP      Et0/3(P)    Et1/3(P)    Et2/3(P)    
+
+COREtaas-81#
+COREtaas-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREtaas-81(config)# !
+COREtaas-81(config)# !PC
+COREtaas-81(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+COREtaas-81(config)# !
+COREtaas-81(config)# !CoreTAAS
+COREtaas-81(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2        
+COREtaas-81(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2      
+COREtaas-81(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2      
+COREtaas-81(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2    
+COREtaas-81(config)# !
+COREtaas-81(config)# !CoreBABA
+COREtaas-81(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4        
+COREtaas-81(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4      
+COREtaas-81(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4      
+COREtaas-81(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4    
+COREtaas-81(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4      
+COREtaas-81(config)# !
+COREtaas-81(config)# !wlc
+COREtaas-81(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+COREtaas-81(config)# !
+COREtaas-81(config)# !ap
+COREtaas-81(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+COREtaas-81(config)# !
+COREtaas-81(config)# !cucm
+COREtaas-81(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+COREtaas-81(config)# !
+COREtaas-81(config)# !eP1
+COREtaas-81(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+COREtaas-81(config)# !
+COREtaas-81(config)# !eP2
+COREtaas-81(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+COREtaas-81(config)# !
+COREtaas-81(config)# !c8
+COREtaas-81(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+COREtaas-81(config)# !
+COREtaas-81(config)# !c6
+COREtaas-81(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+COREtaas-81(config)# !
+COREtaas-81(config)# !edge
+COREtaas-81(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+COREtaas-81(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+COREtaas-81(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+COREtaas-81(config)# !
+COREtaas-81(config)# !edge92
+COREtaas-81(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+COREtaas-81(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+COREtaas-81(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+COREtaas-81(config)# !
+COREtaas-81(config)# !CoreBABA92
+COREtaas-81(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+COREtaas-81(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+COREtaas-81(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+COREtaas-81(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+COREtaas-81(config)#$560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4         
+COREtaas-81(config)# !
+COREtaas-81(config)# !P92
+COREtaas-81(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+COREtaas-81(config)# end
+COREtaas-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREtaas-81(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Catalyst 3560 Switch
+ 
+############################################################
+ 
+The Cisco Catalyst 3560 Series is a line of fixed-configuration, 
+enterprise-class switches that include IEEE 802.3af and Cisco 
+prestandard Power over Ethernet (PoE) functionality in Fast Ethernet 
+and Gigabit Ethernet configurations.
+ 
+The Cisco Catalyst 3560 is an ideal access layer switch for small 
+enterprise LAN access or branch-office environments, combining both 
+10/100/1000 and PoE configurations for maximum productivity and 
+investment protection while enabling the deployment of new applications 
+such as IP telephony, wireless access, video surveillance, 
+building management systems, and remote video kiosks.
+  
+############################################################
+ 
+ 
+ 
+*NOTE: Refer to the lab description in the GUI for additional information
+and Solution for configurations.
+ 
+ 
+|
+COREtaas-81(config)#end
+COREtaas-81#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+COREbaba ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+ 
+ 
+##############################
+ 
+Cisco Catalyst 3560 Switch
+ 
+############################################################
+ 
+The Cisco Catalyst 3560 Series is a line of fixed-configuration, 
+enterprise-class switches that include IEEE 802.3af and Cisco 
+prestandard Power over Ethernet (PoE) functionality in Fast Ethernet 
+and Gigabit Ethernet configurations.
+ 
+The Cisco Catalyst 3560 is an ideal access layer switch for small 
+enterprise LAN access or branch-office environments, combining both 
+10/100/1000 and PoE configurations for maximum productivity and 
+investment protection while enabling the deployment of new applications 
+such as IP telephony, wireless access, video surveillance, 
+building management systems, and remote video kiosks. 
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: Refer to the lab description in the GUI for additional information
+and Solution for configurations.
+ 
+ 
+DO NOT remove or make alterations to the access-list BlockDataDHCP.
+ 
+ 
+
+
+User Access Verification
+
+Password: 
+COREbaba-81>en 
+Password: 
+COREbaba-81#@CoreBABA
+% Unknown command or computer name, or unable to find computer address
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# hostname COREbaba-81
+COREbaba-81(config)# enable secret pass
+COREbaba-81(config)# service password-encryption
+COREbaba-81(config)# no logging console
+COREbaba-81(config)# no ip domain-lookup
+COREbaba-81(config)# line console 0
+COREbaba-81(config-line)#  password pass
+COREbaba-81(config-line)#  login
+COREbaba-81(config-line)#  exec-timeout 0 0
+COREbaba-81(config-line)#$ lab are limited to 5 (vty line 0 - vty line 4)    
+COREbaba-81(config-line)# line vty 0 4
+COREbaba-81(config-line)#  password pass
+COREbaba-81(config-line)#  login
+COREbaba-81(config-line)#  exec-timeout 0 0
+COREbaba-81(config-line)# Int e2/0
+COREbaba-81(config-if)#  no shutdown
+COREbaba-81(config-if)#  no switchport
+COREbaba-81(config-if)#  ip add 10.81.81.4 255.255.255.0
+COREbaba-81(config-if)# Int Vlan 1
+COREbaba-81(config-if)#  no shutdown
+COREbaba-81(config-if)#  ip add 10.81.1.4 255.255.255.0
+COREbaba-81(config-if)#  description MGMTDATA
+COREbaba-81(config-if)# Int Vlan 10
+COREbaba-81(config-if)#  no shutdown
+COREbaba-81(config-if)#  ip add 10.81.10.4 255.255.255.0
+COREbaba-81(config-if)#  description WIRELESS
+COREbaba-81(config-if)# Int Vlan 50
+COREbaba-81(config-if)#  no shutdown
+COREbaba-81(config-if)#  ip add 10.81.50.4 255.255.255.0
+COREbaba-81(config-if)#  description IPCCTV
+COREbaba-81(config-if)# Int Vlan 100
+COREbaba-81(config-if)#  no shutdown
+COREbaba-81(config-if)#  ip add 10.81.100.4 255.255.255.0
+COREbaba-81(config-if)#  description VOICEVLAN
+COREbaba-81(config-if)#end
+COREbaba-81#show cdp neighbor
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+ePhone-2.VOICEVLAN.COM
+                 Eth 1/2           129              R B   Linux Uni Eth 0/0
+ePhone-1.VOICEVLAN.COM
+                 Eth 1/1           170              R B   Linux Uni Eth 0/0
+EDGE-81          Eth 2/0           152              R B   Linux Uni Eth 0/0
+COREtaas-81      Eth 2/3           122              R S   Linux Uni Eth 2/3
+COREtaas-81      Eth 1/3           122              R S   Linux Uni Eth 1/3
+COREtaas-81      Eth 0/3           122              R S   Linux Uni Eth 0/3
+CUCM-81          Eth 1/0           135              R B   Linux Uni Eth 0/0
+aironet-wlc      Eth 0/1           122              R B   Linux Uni Eth 0/0
+WinServer2022-PC Eth 0/0           175              R B   Linux Uni Eth 0/0
+aironet-ap       Eth 0/2           139              R B   Linux Uni Eth 0/0
+Camera-8.IPCCTV.COM
+                 Eth 2/1           134              R B   Linux Uni Eth 0/0
+Camera-6.IPCCTV.COM
+                 Eth 2/2           159              R B   Linux Uni Eth 0/0
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# Int Range e0/3,e1/3,e2/3
+COREbaba-81(config-if-range)#  no shutdown
+COREbaba-81(config-if-range)#  switchport trunk encapsulation Dot1Q
+COREbaba-81(config-if-range)#  switchport mode trunk
+COREbaba-81(config-if-range)# end
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# Int Range e0/3,e1/3,e2/3
+COREbaba-81(config-if-range)#  channel-group 1 mode active
+COREbaba-81(config-if-range)#  channel-protocol Lacp
+COREbaba-81(config-if-range)#end
+COREbaba-81#show etherchannel summary
+Flags:  D - down        P - bundled in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 1
+Number of aggregators:           1
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+1      Po1(SU)         LACP      Et0/3(P)    Et1/3(P)    Et2/3(P)    
+
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# ip dhcp Excluded-add 10.81.1.1 10.81.1.100
+COREbaba-81(config)# ip dhcp Excluded-add 10.81.10.1 10.81.10.100
+COREbaba-81(config)# ip dhcp Excluded-add 10.81.50.1 10.81.50.100
+% Address range contains an already reserved address.
+COREbaba-81(config)# ip dhcp Excluded-add 10.81.100.1 10.81.100.100
+COREbaba-81(config)# ip dhcp pool MGMTDATA
+COREbaba-81(dhcp-config)#  network 10.81.1.0 255.255.255.0
+COREbaba-81(dhcp-config)#  default-router 10.81.1.4
+COREbaba-81(dhcp-config)#  domain-name MGMTDATA.COM
+COREbaba-81(dhcp-config)#  dns-server 10.81.1.10
+COREbaba-81(dhcp-config)# ip dhcp pool WIFIDATA
+COREbaba-81(dhcp-config)#  network 10.81.10.0 255.255.255.0
+COREbaba-81(dhcp-config)#  default-router 10.81.10.4
+COREbaba-81(dhcp-config)#  domain-name WIFIDATA.COM
+COREbaba-81(dhcp-config)#  dns-server 10.81.1.10
+COREbaba-81(dhcp-config)# ip dhcp pool IPCCTV
+COREbaba-81(dhcp-config)#  network 10.81.50.0 255.255.255.0
+COREbaba-81(dhcp-config)#  default-router 10.81.50.4
+COREbaba-81(dhcp-config)#  domain-name IPCCTV.COM
+COREbaba-81(dhcp-config)#  dns-server 10.81.1.10
+COREbaba-81(dhcp-config)# ip dhcp pool VOICEVLAN
+COREbaba-81(dhcp-config)#  network 10.81.100.0 255.255.255.0
+COREbaba-81(dhcp-config)#  default-router 10.81.100.4
+COREbaba-81(dhcp-config)#  domain-name VOICEVLAN.COM
+COREbaba-81(dhcp-config)#  dns-server 10.81.1.10
+COREbaba-81(dhcp-config)#  option 150 ip 10.81.100.8   
+COREbaba-81(dhcp-config)#  end
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# vlan 10
+COREbaba-81(config-vlan)#  name WIFIVLAN
+COREbaba-81(config-vlan)# vlan 50
+COREbaba-81(config-vlan)#  name IPCCTVLAN
+COREbaba-81(config-vlan)# vlan 69
+COREbaba-81(config-vlan)#  name PENTEST
+COREbaba-81(config-vlan)# vlan 70
+COREbaba-81(config-vlan)#  name BLUETEAMSOC
+COREbaba-81(config-vlan)# vlan 71
+COREbaba-81(config-vlan)#  name HR-FUUUUU
+COREbaba-81(config-vlan)# vlan 100
+COREbaba-81(config-vlan)#  name VOICEVLAN
+COREbaba-81(config-vlan)# Int e0/1
+COREbaba-81(config-if)#  switchport mode access
+COREbaba-81(config-if)#  switchport access vlan 10  
+COREbaba-81(config-if)# Int e0/2
+COREbaba-81(config-if)#  switchport mode access
+COREbaba-81(config-if)#  switchport access vlan 10
+COREbaba-81(config-if)# Int e2/1
+COREbaba-81(config-if)#  switchport mode access
+COREbaba-81(config-if)#  switchport access vlan 50  
+COREbaba-81(config-if)# Int e2/2
+COREbaba-81(config-if)#  switchport mode access
+COREbaba-81(config-if)#  switchport access vlan 50    
+COREbaba-81(config-if)# Int e1/0
+COREbaba-81(config-if)#  switchport mode access
+COREbaba-81(config-if)#  switchport access vlan 100     
+COREbaba-81(config-if)# Int e1/1
+COREbaba-81(config-if)#  switchport mode access  
+COREbaba-81(config-if)#  switchport voice vlan 100
+COREbaba-81(config-if)#$he command for it to be ignored by the device.       
+COREbaba-81(config-if)#  !mls qos trust device cisco-phone 
+COREbaba-81(config-if)#  switchport access vlan 1
+COREbaba-81(config-if)# Int e1/2
+COREbaba-81(config-if)#  switchport mode access
+COREbaba-81(config-if)#  switchport voice vlan 100 
+COREbaba-81(config-if)#  !mls qos trust device cisco-phone 
+COREbaba-81(config-if)#  switchport access vlan 1
+COREbaba-81(config-if)# end
+COREbaba-81#
+COREbaba-81#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Et0/0, Et1/1, Et1/2
+10   WIFIVLAN                         active    Et0/1, Et0/2
+50   IPCCTVLAN                        active    Et2/1, Et2/2
+69   PENTEST                          active    
+70   BLUETEAMSOC                      active    
+71   HR-FUUUUU                        active    
+100  VOICEVLAN                        active    Et1/0, Et1/1, Et1/2
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+COREbaba-81#show ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/              Lease expiration        Type
+                    Hardware address/
+                    User name
+10.81.50.6          a600.b0b0.38af          Infinite                Manual
+10.81.50.8          a800.b00b.4cb2          Infinite                Manual
+10.81.100.101       0063.6973.636f.2d30.    Sep 20 2026 02:18 PM    Automatic
+                    3061.322e.6364.3433.
+                    2e62.3163.372d.4574.
+                    302f.302e.3130.30
+10.81.100.102       0063.6973.636f.2d30.    Sep 20 2026 02:18 PM    Automatic
+                    3065.332e.3131.6666.
+                    2e32.3163.642d.4574.
+                    302f.302e.3130.30
+COREbaba-81#show mac address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    aabb.cc00.1d00    DYNAMIC     Et0/0
+  10    aabb.cc00.2000    DYNAMIC     Et0/1
+  10    aabb.cc00.2100    DYNAMIC     Et0/2
+  50    a600.b0b0.38af    DYNAMIC     Et2/2
+  50    a800.b00b.4cb2    DYNAMIC     Et2/1
+ 100    aabb.cc00.2200    DYNAMIC     Et1/0
+Total Mac Addresses for this criterion: 6
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# ip routing
+COREbaba-81(config)# ip dhcp pool CAMERA6
+COREbaba-81(dhcp-config)#  host 10.81.50.6 255.255.255.0
+COREbaba-81(dhcp-config)#$ady recieved an IP from the IPCCTV DHCP pool.      
+COREbaba-81(dhcp-config)#$eBABA, then paste the reservation commands again.  
+COREbaba-81(dhcp-config)#  client-identifier a600.b0b0.38af
+COREbaba-81(dhcp-config)# ip dhcp pool CAMERA8
+COREbaba-81(dhcp-config)#  host 10.81.50.8 255.255.255.0
+COREbaba-81(dhcp-config)#  client-identifier a800.b00b.4cb2
+COREbaba-81(dhcp-config)#end
+COREbaba-81#show ip dhcp binding
+Bindings from all pools not associated with VRF:
+IP address          Client-ID/              Lease expiration        Type
+                    Hardware address/
+                    User name
+10.81.50.6          a600.b0b0.38af          Infinite                Manual
+10.81.50.8          a800.b00b.4cb2          Infinite                Manual
+10.81.100.101       0063.6973.636f.2d30.    Sep 20 2026 02:18 PM    Automatic
+                    3061.322e.6364.3433.
+                    2e62.3163.372d.4574.
+                    302f.302e.3130.30
+10.81.100.102       0063.6973.636f.2d30.    Sep 20 2026 02:18 PM    Automatic
+                    3065.332e.3131.6666.
+                    2e32.3163.642d.4574.
+                    302f.302e.3130.30
+COREbaba-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# ip routing
+COREbaba-81(config)# ip route 0.0.0.0 0.0.0.0 10.81.81.1
+COREbaba-81(config)# end
+COREbaba-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# router ospf 1
+COREbaba-81(config-router)# router-id 10.81.81.4
+COREbaba-81(config-router)# network 10.81.0.0  0.0.255.255 area 0
+COREbaba-81(config-router)# int e2/0
+COREbaba-81(config-if)#  ip ospf network point-to-point
+COREbaba-81(config-if)# end
+COREbaba-81#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.81.100.8       1   FULL/DR         00:00:32    10.81.100.8     Vlan100
+81.0.0.1          0   FULL/  -        00:00:38    10.81.81.1      Ethernet2/0
+COREbaba-81#!CoreBABA must have CUCM(10.81.100.8) & EDGE(81.0.0.1) displayed.
+COREbaba-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# !
+COREbaba-81(config)# !PC
+COREbaba-81(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+COREbaba-81(config)# !
+COREbaba-81(config)# !CoreTAAS
+COREbaba-81(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2        
+COREbaba-81(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2      
+COREbaba-81(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2      
+COREbaba-81(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2    
+COREbaba-81(config)# !
+COREbaba-81(config)# !CoreBABA
+COREbaba-81(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4        
+COREbaba-81(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4      
+COREbaba-81(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4      
+COREbaba-81(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4    
+COREbaba-81(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4      
+COREbaba-81(config)# !
+COREbaba-81(config)# !wlc
+COREbaba-81(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+COREbaba-81(config)# !
+COREbaba-81(config)# !ap
+COREbaba-81(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+COREbaba-81(config)# !
+COREbaba-81(config)# !cucm
+COREbaba-81(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+COREbaba-81(config)# !
+COREbaba-81(config)# !eP1
+COREbaba-81(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+COREbaba-81(config)# !
+COREbaba-81(config)# !eP2
+COREbaba-81(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+COREbaba-81(config)# !
+COREbaba-81(config)# !c8
+COREbaba-81(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+COREbaba-81(config)# !
+COREbaba-81(config)# !c6
+COREbaba-81(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+COREbaba-81(config)# !
+COREbaba-81(config)# !edge
+COREbaba-81(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+COREbaba-81(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+COREbaba-81(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+COREbaba-81(config)# !
+COREbaba-81(config)# !edge92
+COREbaba-81(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+COREbaba-81(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+COREbaba-81(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+COREbaba-81(config)# !
+COREbaba-81(config)# !CoreBABA92
+COREbaba-81(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+COREbaba-81(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+COREbaba-81(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+COREbaba-81(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+COREbaba-81(config)#$560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4         
+COREbaba-81(config)# !
+COREbaba-81(config)# !P92
+COREbaba-81(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+COREbaba-81(config)# end
+COREbaba-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+COREbaba-81(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Catalyst 3560 Switch
+ 
+############################################################
+ 
+The Cisco Catalyst 3560 Series is a line of fixed-configuration, 
+enterprise-class switches that include IEEE 802.3af and Cisco 
+prestandard Power over Ethernet (PoE) functionality in Fast Ethernet 
+and Gigabit Ethernet configurations.
+ 
+The Cisco Catalyst 3560 is an ideal access layer switch for small 
+enterprise LAN access or branch-office environments, combining both 
+10/100/1000 and PoE configurations for maximum productivity and 
+investment protection while enabling the deployment of new applications 
+such as IP telephony, wireless access, video surveillance, 
+building management systems, and remote video kiosks. 
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: Refer to the lab description in the GUI for additional information
+and Solution for configurations.
+ 
+ 
+DO NOT remove or make alterations to the access-list BlockDataDHCP.
+ 
+ 
+|
+COREbaba-81(config)# no ip access-list extended BlockDataDHCP
+COREbaba-81(config)# ip access-list extended BlockDataDHCP
+COREbaba-81(config-ext-nacl)#  deny udp any any eq 67
+COREbaba-81(config-ext-nacl)#  deny udp any any eq 68
+COREbaba-81(config-ext-nacl)#  permit ip any any
+COREbaba-81(config-ext-nacl)# int vlan 1
+COREbaba-81(config-if)#  ip access-group BlockDataDHCP in
+COREbaba-81(config-if)#  ip access-group BlockDataDHCP out
+COREbaba-81(config-if)#  end
+COREbaba-81#
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+eP1 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 35
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco Unified IP Phone 8945
+ 
+############################################################
+ 
+The Cisco Unified IP Phone 8945 integrates video communications 
+into the Cisco Unified IP Phones 8900 Series with a built-in, 
+high-quality video, VGA or 640 x 480 pixel, camera up to 
+30 frames per second, for both endcoding anddecoding.
+ 
+The phone supports four lines and four context-sensitive soft keys 
+along with a high-definition voice, full-duplex speakerphone for a 
+more productive and more flexible endpoint experience.
+ 
+############################################################
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+ 
+ 
+    HOWEVER, it will not display its ip address on any interface.
+    
+Use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the ePhones recieved an IP.
+ 
+Expected IPs: 
+ 
+ePhones must have an IP from the
+ 
+10.81.100.100 - 10.81.100.254 range.
+ 
+ 
+
+ePhone-1>en
+ePhone-1#sh ip int bri
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES DHCP   up                    up      
+Ethernet0/0.100            10.81.100.101   YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+ePhone-1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ePhone-1(config)# !
+ePhone-1(config)# !PC
+ePhone-1(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+ePhone-1(config)# !
+ePhone-1(config)# !CoreTAAS
+ePhone-1(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+ePhone-1(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2         
+ePhone-1(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2         
+ePhone-1(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2       
+ePhone-1(config)# !
+ePhone-1(config)# !CoreBABA
+ePhone-1(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+ePhone-1(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4         
+ePhone-1(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4         
+ePhone-1(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4       
+ePhone-1(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4         
+ePhone-1(config)# !
+ePhone-1(config)# !wlc
+ePhone-1(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+ePhone-1(config)# !
+ePhone-1(config)# !ap
+ePhone-1(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+ePhone-1(config)# !
+ePhone-1(config)# !cucm
+ePhone-1(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+ePhone-1(config)# !
+ePhone-1(config)# !eP1
+ePhone-1(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+ePhone-1(config)# !
+ePhone-1(config)# !eP2
+ePhone-1(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+ePhone-1(config)# !
+ePhone-1(config)# !c8
+ePhone-1(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+ePhone-1(config)# !
+ePhone-1(config)# !c6
+ePhone-1(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+ePhone-1(config)# !
+ePhone-1(config)# !edge
+ePhone-1(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+ePhone-1(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+ePhone-1(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+ePhone-1(config)# !
+ePhone-1(config)# !edge92
+ePhone-1(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+ePhone-1(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+ePhone-1(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+ePhone-1(config)# !
+ePhone-1(config)# !CoreBABA92
+ePhone-1(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+ePhone-1(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+ePhone-1(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+ePhone-1(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+ePhone-1(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+ePhone-1(config)# !
+ePhone-1(config)# !P92
+ePhone-1(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+ePhone-1(config)# end
+ePhone-1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ePhone-1(config)# hostname ePhone-1
+ePhone-1(config)# int e0/0
+ePhone-1(config-if)#  mac-address 00a2.cd43.b1c7
+ePhone-1(config-if)#  end
+ePhone-1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ePhone-1(config)# no logging cons
+ePhone-1(config)# no ip domain lookup
+ePhone-1(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Unified IP Phone 8945
+ 
+############################################################
+ 
+The Cisco Unified IP Phone 8945 integrates video communications 
+into the Cisco Unified IP Phones 8900 Series with a built-in, 
+high-quality video, VGA or 640 x 480 pixel, camera up to 
+30 frames per second, for both endcoding anddecoding.
+ 
+The phone supports four lines and four context-sensitive soft keys 
+along with a high-definition voice, full-duplex speakerphone for a 
+more productive and more flexible endpoint experience.
+ 
+############################################################
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+ 
+ 
+    HOWEVER, it will not display its ip address on any interface.
+    
+Use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the ePhones recieved an IP.
+ 
+Expected IPs: 
+ 
+ePhones must have an IP from the
+ 
+10.81.100.100 - 10.81.100.254 range.
+ 
+ 
+|
+ePhone-1(config)# line cons 0
+ePhone-1(config-line)#  no login
+ePhone-1(config-line)#  exec-timeout 0 0
+ePhone-1(config-line)# line vty 0 4
+ePhone-1(config-line)#  exec-timeout 0 0
+ePhone-1(config-line)# int e0/0
+ePhone-1(config-if)#  no shut
+ePhone-1(config-if)#  ip add dhcp
+ePhone-1(config-if)# int e0/0.100
+ePhone-1(config-subif)#  encapsulation dot1q 100
+ePhone-1(config-subif)#  ip add dhcp
+ePhone-1(config-subif)# !
+ePhone-1(config-subif)# no ip access-list extended BlockDataDHCP
+ePhone-1(config)# ip access-list extended BlockDataDHCP
+ePhone-1(config-ext-nacl)#  permit udp 10.81.100.0 0.0.0.255 any eq 67
+ePhone-1(config-ext-nacl)#  permit udp 10.81.100.0 0.0.0.255 any eq 68
+ePhone-1(config-ext-nacl)#  permit icmp 10.81.100.0 0.0.0.255 any
+ePhone-1(config-ext-nacl)# int e0/0
+ePhone-1(config-if)#  ip access-group BlockDataDHCP in
+ePhone-1(config-if)#  end
+ePhone-1#
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+eP2 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 36
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco Unified IP Phone 8945
+ 
+############################################################
+ 
+The Cisco Unified IP Phone 8945 integrates video communications 
+into the Cisco Unified IP Phones 8900 Series with a built-in, 
+high-quality video, VGA or 640 x 480 pixel, camera up to 
+30 frames per second, for both endcoding anddecoding.
+ 
+The phone supports four lines and four context-sensitive soft keys 
+along with a high-definition voice, full-duplex speakerphone for a 
+more productive and more flexible endpoint experience.
+ 
+############################################################
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+ 
+ 
+    HOWEVER, it will not display its ip address on any interface.
+    
+Use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the ePhones recieved an IP.
+ 
+Expected IPs: 
+ 
+ePhones must have an IP from the
+ 
+10.81.100.100 - 10.81.100.254 range.
+ 
+ 
+
+ePhone-2>en
+ePhone-2#sh ip int bri
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES DHCP   up                    up      
+Ethernet0/0.100            10.81.100.102   YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+ePhone-2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ePhone-2(config)# !
+ePhone-2(config)# !PC
+ePhone-2(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+ePhone-2(config)# !
+ePhone-2(config)# !CoreTAAS
+ePhone-2(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+ePhone-2(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2         
+ePhone-2(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2         
+ePhone-2(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2       
+ePhone-2(config)# !
+ePhone-2(config)# !CoreBABA
+ePhone-2(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+ePhone-2(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4         
+ePhone-2(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4         
+ePhone-2(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4       
+ePhone-2(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4         
+ePhone-2(config)# !
+ePhone-2(config)# !wlc
+ePhone-2(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+ePhone-2(config)# !
+ePhone-2(config)# !ap
+ePhone-2(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+ePhone-2(config)# !
+ePhone-2(config)# !cucm
+ePhone-2(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+ePhone-2(config)# !
+ePhone-2(config)# !eP1
+ePhone-2(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+ePhone-2(config)# !
+ePhone-2(config)# !eP2
+ePhone-2(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+ePhone-2(config)# !
+ePhone-2(config)# !c8
+ePhone-2(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+ePhone-2(config)# !
+ePhone-2(config)# !c6
+ePhone-2(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+ePhone-2(config)# !
+ePhone-2(config)# !edge
+ePhone-2(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+ePhone-2(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+ePhone-2(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+ePhone-2(config)# !
+ePhone-2(config)# !edge92
+ePhone-2(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+ePhone-2(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+ePhone-2(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+ePhone-2(config)# !
+ePhone-2(config)# !CoreBABA92
+ePhone-2(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+ePhone-2(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+ePhone-2(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+ePhone-2(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+ePhone-2(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+ePhone-2(config)# !
+ePhone-2(config)# !P92
+ePhone-2(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+ePhone-2(config)# end
+ePhone-2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ePhone-2(config)# hostname ePhone-2
+ePhone-2(config)# int e0/0
+ePhone-2(config-if)#  mac-address 00e3.11ff.21cd
+ePhone-2(config-if)#  end
+ePhone-2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ePhone-2(config)# no logging cons
+ePhone-2(config)# no ip domain lookup
+ePhone-2(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Unified IP Phone 8945
+ 
+############################################################
+ 
+The Cisco Unified IP Phone 8945 integrates video communications 
+into the Cisco Unified IP Phones 8900 Series with a built-in, 
+high-quality video, VGA or 640 x 480 pixel, camera up to 
+30 frames per second, for both endcoding anddecoding.
+ 
+The phone supports four lines and four context-sensitive soft keys 
+along with a high-definition voice, full-duplex speakerphone for a 
+more productive and more flexible endpoint experience.
+ 
+############################################################
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+ 
+ 
+    HOWEVER, it will not display its ip address on any interface.
+    
+Use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the ePhones recieved an IP.
+ 
+Expected IPs: 
+ 
+ePhones must have an IP from the
+ 
+10.81.100.100 - 10.81.100.254 range.
+ 
+ 
+|
+ePhone-2(config)# line cons 0
+ePhone-2(config-line)#  no login
+ePhone-2(config-line)#  exec-timeout 0 0
+ePhone-2(config-line)# line vty 0 4
+ePhone-2(config-line)#  exec-timeout 0 0
+ePhone-2(config-line)# int e0/0
+ePhone-2(config-if)#  no shut
+ePhone-2(config-if)#  ip add dhcp
+ePhone-2(config-if)# int e0/0.100
+ePhone-2(config-subif)#  encapsulation dot1q 100
+ePhone-2(config-subif)#  ip add dhcp
+ePhone-2(config-subif)# !
+ePhone-2(config-subif)# no ip access-list extended BlockDataDHCP
+ePhone-2(config)# ip access-list extended BlockDataDHCP
+ePhone-2(config-ext-nacl)#  permit udp 10.81.100.0 0.0.0.255 any eq 67
+ePhone-2(config-ext-nacl)#  permit udp 10.81.100.0 0.0.0.255 any eq 68
+ePhone-2(config-ext-nacl)#  permit icmp 10.81.100.0 0.0.0.255 any
+ePhone-2(config-ext-nacl)# int e0/0
+ePhone-2(config-if)#  ip access-group BlockDataDHCP in
+ePhone-2(config-if)#  end
+ePhone-2#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+C6 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 38
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco Video Surveillance 3000 IP Camera
+ 
+############################################################
+ 
+The CiscoB. Video Surveillance 3520 IP Camera is 
+a high-definition, full-functioned video endpoint with 
+industry-leading image quality and processing power. The camera is 
+capable of resolutions up to 1280x800 at 30 frames per second while 
+optimizing network usage with either H.264 or MJPEG compression.
+ 
+Contact closures allow integration with access control systems. 
+With its open, standards-based design, the camera provides an ideal 
+platform for integration and operation as an independent device or 
+as part of a Cisco Video Surveillance network.
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+ 
+Use the 'show ip interface brief' command to verify its ip address, 
+or use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the correct ip address is reserved for the camera.
+ 
+The IP binding must have a lease expiration of INFINITE.
+ 
+The expected IP of this device is 10.81.50.6
+ 
+     If the IP on the camera does not match with the reserved IP, it
+     simply means it got an ip from the vlan 50 dhcp pool first before
+     the ip reservation was issued on the dhcp server (coreBABA).
+ 
+ 
+USERNAME: admin
+PASSWORD: C1sc0123
+ 
+ 
+
+
+User Access Verification
+
+Username: admin
+Password: 
+Camera-6#sh ip int br
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-6(config)# int e0/0
+Camera-6(config-if)#  ip add dhcp
+Camera-6(config-if)#  end
+Camera-6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-6(config)# int e0/0
+Camera-6(config-if)#  ip add dhcp
+Camera-6(config-if)#shut
+Camera-6(config-if)#show ip interface brief
+                      ^
+% Invalid input detected at '^' marker.
+
+Camera-6(config-if)#do show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES manual administratively down down    
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-6(config-if)#no shut
+Camera-6(config-if)#do show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                10.81.50.6      YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-6(config-if)#do sh ip int bri
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                10.81.50.6      YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-6(config-if)#end
+Camera-6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-6(config)# !
+Camera-6(config)# !PC
+Camera-6(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+Camera-6(config)# !
+Camera-6(config)# !CoreTAAS
+Camera-6(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+Camera-6(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2         
+Camera-6(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2         
+Camera-6(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2       
+Camera-6(config)# !
+Camera-6(config)# !CoreBABA
+Camera-6(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+Camera-6(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4         
+Camera-6(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4         
+Camera-6(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4       
+Camera-6(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4         
+Camera-6(config)# !
+Camera-6(config)# !wlc
+Camera-6(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+Camera-6(config)# !
+Camera-6(config)# !ap
+Camera-6(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+Camera-6(config)# !
+Camera-6(config)# !cucm
+Camera-6(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+Camera-6(config)# !
+Camera-6(config)# !eP1
+Camera-6(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+Camera-6(config)# !
+Camera-6(config)# !eP2
+Camera-6(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+Camera-6(config)# !
+Camera-6(config)# !c8
+Camera-6(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+Camera-6(config)# !
+Camera-6(config)# !c6
+Camera-6(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+Camera-6(config)# !
+Camera-6(config)# !edge
+Camera-6(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+Camera-6(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+Camera-6(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+Camera-6(config)# !
+Camera-6(config)# !edge92
+Camera-6(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+Camera-6(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+Camera-6(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+Camera-6(config)# !
+Camera-6(config)# !CoreBABA92
+Camera-6(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+Camera-6(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+Camera-6(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+Camera-6(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+Camera-6(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+Camera-6(config)# !
+Camera-6(config)# !P92
+Camera-6(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+Camera-6(config)# end
+Camera-6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-6(config)# hostname Camera-6
+Camera-6(config)# no logging cons
+Camera-6(config)# no ip domain lookup
+Camera-6(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Video Surveillance 3000 IP Camera
+ 
+############################################################
+ 
+The CiscoB. Video Surveillance 3520 IP Camera is 
+a high-definition, full-functioned video endpoint with 
+industry-leading image quality and processing power. The camera is 
+capable of resolutions up to 1280x800 at 30 frames per second while 
+optimizing network usage with either H.264 or MJPEG compression.
+ 
+Contact closures allow integration with access control systems. 
+With its open, standards-based design, the camera provides an ideal 
+platform for integration and operation as an independent device or 
+as part of a Cisco Video Surveillance network.
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+ 
+Use the 'show ip interface brief' command to verify its ip address, 
+or use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the correct ip address is reserved for the camera.
+ 
+The IP binding must have a lease expiration of INFINITE.
+ 
+The expected IP of this device is 10.81.50.6
+ 
+     If the IP on the camera does not match with the reserved IP, it
+     simply means it got an ip from the vlan 50 dhcp pool first before
+     the ip reservation was issued on the dhcp server (coreBABA).
+ 
+ 
+USERNAME: admin
+PASSWORD: C1sc0123
+ 
+ 
+|
+Camera-6(config)# username admin privilege 15 secret C1sc0123
+Camera-6(config)# line cons 0
+Camera-6(config-line)#  password pass
+Camera-6(config-line)#  login local
+Camera-6(config-line)#  exec-timeout 0 0
+Camera-6(config-line)# line vty 0 4
+Camera-6(config-line)#  password pass
+Camera-6(config-line)#  login local
+Camera-6(config-line)#  exec-timeout 0 0
+Camera-6(config-line)# int e0/0
+Camera-6(config-if)#  no shut
+Camera-6(config-if)#  ip add dhcp
+Camera-6(config-if)#  mac-address a600.b0b0.38af
+Camera-6(config-if)#  ip dhcp client client-id hex a600b0b038af
+Camera-6(config-if)#  end
+Camera-6#
+Camera-6#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+C8 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 37
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco Video Surveillance 3000 IP Camera
+ 
+############################################################
+ 
+The CiscoB. Video Surveillance 3520 IP Camera is 
+a high-definition, full-functioned video endpoint with 
+industry-leading image quality and processing power. The camera is 
+capable of resolutions up to 1280x800 at 30 frames per second while 
+optimizing network usage with either H.264 or MJPEG compression.
+ 
+Contact closures allow integration with access control systems. 
+With its open, standards-based design, the camera provides an ideal 
+platform for integration and operation as an independent device or 
+as part of a Cisco Video Surveillance network.
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+Use the 'show ip interface brief' command to verify its ip address, 
+or use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the correct ip address is reserved for the camera.
+ 
+The IP binding must have a lease expiration of INFINITE.
+ 
+The expected IP of this device is 10.81.50.8
+     If the IP on the camera does not match with the reserved IP, it
+     simply means it got an ip from the vlan 50 dhcp pool first before
+     the ip reservation was issued on the dhcp server (coreBABA).
+ 
+ 
+USERNAME: admin
+PASSWORD: C1sc0123
+ 
+ 
+
+
+User Access Verification
+
+Username: admin
+Password: 
+Camera-8#sh ip int br
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-8#sh ip int br
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                10.81.50.102    YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-8#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-8(config)# int e0/0
+Camera-8(config-if)#  ip add dhcp
+Camera-8(config-if)#  end
+Camera-8#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-8(config)# int e0/0
+Camera-8(config-if)#  ip add dhcp
+Camera-8(config-if)#shut
+Camera-8(config-if)#show ip interface brief
+                      ^
+% Invalid input detected at '^' marker.
+
+Camera-8(config-if)#do show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES manual administratively down down    
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-8(config-if)#no shut
+Camera-8(config-if)#do show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                10.81.50.8      YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-8(config-if)#do sh ip int bri
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                10.81.50.8      YES DHCP   up                    up      
+Ethernet0/1                unassigned      YES NVRAM  administratively down down    
+Ethernet0/2                unassigned      YES NVRAM  administratively down down    
+Ethernet0/3                unassigned      YES NVRAM  administratively down down    
+Camera-8(config-if)#end
+Camera-8#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-8(config)# !
+Camera-8(config)# !PC
+Camera-8(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+Camera-8(config)# !
+Camera-8(config)# !CoreTAAS
+Camera-8(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+Camera-8(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2         
+Camera-8(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2         
+Camera-8(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2       
+Camera-8(config)# !
+Camera-8(config)# !CoreBABA
+Camera-8(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+Camera-8(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4         
+Camera-8(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4         
+Camera-8(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4       
+Camera-8(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4         
+Camera-8(config)# !
+Camera-8(config)# !wlc
+Camera-8(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+Camera-8(config)# !
+Camera-8(config)# !ap
+Camera-8(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+Camera-8(config)# !
+Camera-8(config)# !cucm
+Camera-8(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+Camera-8(config)# !
+Camera-8(config)# !eP1
+Camera-8(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+Camera-8(config)# !
+Camera-8(config)# !eP2
+Camera-8(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+Camera-8(config)# !
+Camera-8(config)# !c8
+Camera-8(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+Camera-8(config)# !
+Camera-8(config)# !c6
+Camera-8(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+Camera-8(config)# !
+Camera-8(config)# !edge
+Camera-8(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+Camera-8(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+Camera-8(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+Camera-8(config)# !
+Camera-8(config)# !edge92
+Camera-8(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+Camera-8(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+Camera-8(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+Camera-8(config)# !
+Camera-8(config)# !CoreBABA92
+Camera-8(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+Camera-8(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+Camera-8(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+Camera-8(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+Camera-8(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+Camera-8(config)# !
+Camera-8(config)# !P92
+Camera-8(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+Camera-8(config)# end
+Camera-8#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Camera-8(config)# hostname Camera-8
+Camera-8(config)# no logging cons
+Camera-8(config)# no ip domain lookup
+Camera-8(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Video Surveillance 3000 IP Camera
+ 
+############################################################
+ 
+The CiscoB. Video Surveillance 3520 IP Camera is 
+a high-definition, full-functioned video endpoint with 
+industry-leading image quality and processing power. The camera is 
+capable of resolutions up to 1280x800 at 30 frames per second while 
+optimizing network usage with either H.264 or MJPEG compression.
+ 
+Contact closures allow integration with access control systems. 
+With its open, standards-based design, the camera provides an ideal 
+platform for integration and operation as an independent device or 
+as part of a Cisco Video Surveillance network.
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: There is no need to change any configurations on this 
+device. It will automatically obtain an IP address via DHCP, 
+given the DHCP server (coreBABA) is configured properly.
+Use the 'show ip interface brief' command to verify its ip address, 
+or use the 'show ip dhcp binding' command on the switch (CoreBABA) 
+to identify if the correct ip address is reserved for the camera.
+ 
+The IP binding must have a lease expiration of INFINITE.
+ 
+The expected IP of this device is 10.81.50.8
+     If the IP on the camera does not match with the reserved IP, it
+     simply means it got an ip from the vlan 50 dhcp pool first before
+     the ip reservation was issued on the dhcp server (coreBABA).
+ 
+ 
+USERNAME: admin
+PASSWORD: C1sc0123
+ 
+ 
+|
+Camera-8(config)# username admin privilege 15 secret C1sc0123
+Camera-8(config)# line cons 0
+Camera-8(config-line)#  password pass
+Camera-8(config-line)#  login local
+Camera-8(config-line)#  exec-timeout 0 0
+Camera-8(config-line)# line vty 0 4
+Camera-8(config-line)#  password pass
+Camera-8(config-line)#  login local
+Camera-8(config-line)#  exec-timeout 0 0
+Camera-8(config-line)# int e0/0
+Camera-8(config-if)#  no shut
+Camera-8(config-if)#  ip add dhcp
+Camera-8(config-if)#  mac-address a800.b00b.4cb2
+Camera-8(config-if)#  ip dhcp client client-id hex a800b00b4cb2 
+Camera-8(config-if)#  end
+Camera-8#
+Camera-8#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CUCM ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 338969K bytes of memory.Installed image archive
+
+Processor board ID 34
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+*Sep 19 12:45:43.204: %LINEPROTO-5-UPDOWN: Line protocol on Interface VoIP-Null0, changed state to up
+*Sep 19 12:45:43.205: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Sep 19 12:45:43.205: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Sep 19 12:45:43.205: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Sep 19 12:45:43.205: %LINK-3-UPDOWN: Interface Ethernet0/3, changed state to up
+*Sep 19 12:45:43.597: %SYS-5-CONFIG_I: Configured from memory by console
+*Sep 19 12:45:43.687: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+*Sep 19 12:45:43.703: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Sep 19 12:45:43.703: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+*Sep 19 12:45:44.212: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to down
+*Sep 19 12:45:44.212: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to down
+*Sep 19 12:45:44.212: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to down
+*Sep 19 12:45:44.212: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to down
+*Sep 19 12:45:45.565: %LINK-5-CHANGED: Interface Ethernet0/0, changed state to administratively down
+*Sep 19 12:45:45.577: %LINK-5-CHANGED: Interface Ethernet0/1, changed state to administratively down
+*Sep 19 12:45:45.586: %LINK-5-CHANGED: Interface Ethernet0/2, changed state to administratively down
+*Sep 19 12:45:45.586: %LINK-5-CHANGED: Interface Ethernet0/3, changed state to administratively down
+*Sep 19 12:45:49.045: %PNP-6-PNP_DISCOVERY_STOPPED: PnP Discovery stopped (Startup Config Present)
+
+ 
+
+ 
+
+##############################
+
+ 
+
+Cisco Unified Communications Manager Express 9.1
+
+ 
+
+############################################################
+
+ 
+
+Ciscor Unified Communications Manager Express provides call 
+
+processing to Cisco Unified IP Phones for distributed enterprise 
+
+branch-office environments and retail deployments. Even branch 
+
+offices within the same enterprise can have different needs and 
+
+requirements when it comes to unified communications. 
+
+ 
+
+Cisco Unified Communications Manager Express delivers on this need 
+
+by providing localized call control, mobility, and conferencing 
+
+alongside data applications on Cisco Integrated Services Routers.
+
+ 
+
+############################################################
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+Router>
+Router>en
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)# hostname CUCM-81
+CUCM-81(config)# enable secret pass
+CUCM-81(config)# service password-encryption
+CUCM-81(config)# no logging console
+CUCM-81(config)# no ip domain-lookup
+CUCM-81(config)# line console 0
+CUCM-81(config-line)#  password pass
+CUCM-81(config-line)#  login
+CUCM-81(config-line)#  exec-timeout 0 0
+CUCM-81(config-line)# line vty 0 4
+CUCM-81(config-line)#  password pass
+CUCM-81(config-line)#  login
+CUCM-81(config-line)#  exec-timeout 0 0
+CUCM-81(config-line)# Int e0/0
+CUCM-81(config-if)#  no shutdown
+CUCM-81(config-if)#  ip add 10.81.100.8 255.255.255.0 
+CUCM-81(config-if)#  end
+CUCM-81#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# dial-peer voice 1 pots
+CUCM-81(config-dial-peer)#  destination-pattern 8100
+CUCM-81(config-dial-peer)#$Added an exclamation mark to set it as a comment  
+CUCM-81(config-dial-peer)#  !port 0/0/0
+CUCM-81(config-dial-peer)# dial-peer voice 2 pots
+CUCM-81(config-dial-peer)#  destination-pattern 8101
+CUCM-81(config-dial-peer)#  !port 0/0/1
+CUCM-81(config-dial-peer)# dial-peer voice 3 pots
+CUCM-81(config-dial-peer)#  destination-pattern 8102
+CUCM-81(config-dial-peer)#  !port 0/0/2
+CUCM-81(config-dial-peer)# dial-peer voice 4 pots
+CUCM-81(config-dial-peer)#  destination-pattern 8103
+CUCM-81(config-dial-peer)#  !port 0/0/3
+CUCM-81(config-dial-peer)#  end
+CUCM-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# no telephony-service
+CUCM-81(config)# telephony-service
+CUCM-81(config-telephony)#  no auto assign
+CUCM-81(config-telephony)#  no auto-reg-ephone
+CUCM-81(config-telephony)#  max-ephones 5
+CUCM-81(config-telephony)#  max-dn 20
+CUCM-81(config-telephony)#  ip source-address 10.81.100.8 port 2000
+CUCM-81(config-telephony)#  create cnf-files
+Post-init cnf creation is in progress, pls re-issue this command later
+CUCM-81(config-telephony)# ephone-dn 1
+CUCM-81(config-ephone-dn)#  number 8111
+CUCM-81(config-ephone-dn)# ephone-dn 2
+CUCM-81(config-ephone-dn)#  number 8122
+CUCM-81(config-ephone-dn)# ephone-dn 3
+CUCM-81(config-ephone-dn)#  number 8133
+CUCM-81(config-ephone-dn)# ephone-dn 4
+CUCM-81(config-ephone-dn)#  number 8144
+CUCM-81(config-ephone-dn)# ephone-dn 5
+CUCM-81(config-ephone-dn)#  number 8155
+CUCM-81(config-ephone-dn)# ephone-dn 6
+CUCM-81(config-ephone-dn)#  number 8166
+CUCM-81(config-ephone-dn)# ephone-dn 7
+CUCM-81(config-ephone-dn)#  number 8177
+CUCM-81(config-ephone-dn)# ephone-dn 8
+CUCM-81(config-ephone-dn)#  number 8188
+CUCM-81(config-ephone-dn)# ephone 1
+CUCM-81(config-ephone)#  mac-address 00a2.cd43.b1c7
+CUCM-81(config-ephone)#  type 8945
+CUCM-81(config-ephone)#  button 1:1 2:2 3:3 4:4
+CUCM-81(config-ephone)#  restart
+restarting 00A2.CD43.B1C7
+CUCM-81(config-ephone)# ephone 2
+CUCM-81(config-ephone)#  mac-address 00e3.11ff.21cd
+CUCM-81(config-ephone)#  type 8945
+CUCM-81(config-ephone)#  button 1:5 2:6 3:7 4:8
+CUCM-81(config-ephone)#  restart
+restarting 00E3.11FF.21CD
+CUCM-81(config-ephone)# end
+CUCM-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# ephone 1
+CUCM-81(config-ephone)#  video
+CUCM-81(config-ephone)# voice service voip
+CUCM-81(conf-voi-serv)# h323
+CUCM-81(conf-serv-h323)# call start slow
+CUCM-81(conf-serv-h323)# ephone 2
+CUCM-81(config-ephone)#  video
+CUCM-81(config-ephone)# voice service voip
+CUCM-81(conf-voi-serv)# h323
+CUCM-81(conf-serv-h323)# call start slow
+CUCM-81(conf-serv-h323)#end
+CUCM-81#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# voice service voip
+CUCM-81(conf-voi-serv)# ip address trusted list
+CUCM-81(cfg-iptrust-list)# ipv4 0.0.0.0 0.0.0.0
+CUCM-81(cfg-iptrust-list)# end
+CUCM-81#
+CUCM-81#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# dial-peer voice 92 Voip
+CUCM-81(config-dial-peer)# destination-pattern 92..
+CUCM-81(config-dial-peer)# session target ipv4:10.92.100.8
+CUCM-81(config-dial-peer)# codec g711ULAW
+CUCM-81(config-dial-peer)#config t
+                            ^
+% Invalid input detected at '^' marker.
+
+CUCM-81(config-dial-peer)# dial-peer voice 69 voip
+CUCM-81(config-dial-peer)#  service rivanaa out-bound
+CUCM-81(config-dial-peer)#  destination-pattern 8169
+CUCM-81(config-dial-peer)#  session target ipv4:10.81.100.8
+CUCM-81(config-dial-peer)#  incoming called-number 8169
+CUCM-81(config-dial-peer)#  dtmf-relay h245-alphanumeric
+CUCM-81(config-dial-peer)#  codec g711ulaw
+CUCM-81(config-dial-peer)#  no vad
+CUCM-81(config-dial-peer)# !
+CUCM-81(config-dial-peer)# telephony-service
+CUCM-81(config-telephony)#  moh "flash:/en_bacd_music_on_hold.au"
+                                ^
+% Invalid input detected at '^' marker.
+
+CUCM-81(config-telephony)# !
+CUCM-81(config-telephony)# application
+CUCM-81(config-app)#  service rivanaa flash:app-b-acd-aa-3.0.0.2.tcl
+CUCM-81(config-app-param)#   paramspace english index 1        
+CUCM-81(config-app-param)#   param number-of-hunt-grps 2
+CUCM-81(config-app-param)#   param dial-by-extension-option 8
+CUCM-81(config-app-param)#   param handoff-string rivanaa
+CUCM-81(config-app-param)#   param welcome-prompt flash:en_bacd_welcome.au
+CUCM-81(config-app-param)#   paramspace english language en
+CUCM-81(config-app-param)#   param call-retry-timer 15
+CUCM-81(config-app-param)#   param service-name rivanqueue
+CUCM-81(config-app-param)#   paramspace english location flash:
+CUCM-81(config-app-param)#   param second-greeting-time 60
+CUCM-81(config-app-param)#   param max-time-vm-retry 2
+CUCM-81(config-app-param)#   param voice-mail 1234
+CUCM-81(config-app-param)#   param max-time-call-retry 700
+CUCM-81(config-app-param)#   param aa-pilot _69
+CUCM-81(config-app-param)#  service rivanqueue flash:app-b-acd-3.0.0.2.tcl
+CUCM-81(config-app-param)#   param queue-len 15
+CUCM-81(config-app-param)#   param aa-hunt1 8100
+CUCM-81(config-app-param)#   param aa-hunt2 8101
+CUCM-81(config-app-param)#   param aa-hunt3 8177
+CUCM-81(config-app-param)#   param aa-hunt4 8133
+CUCM-81(config-app-param)#   param queue-manager-debugs 1
+CUCM-81(config-app-param)#   param number-of-hunt-grps 4
+CUCM-81(config-app-param)#   end
+CUCM-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# ip routing
+CUCM-81(config)# ip route 0.0.0.0 0.0.0.0 10.81.100.4
+CUCM-81(config)# end
+CUCM-81#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is 10.81.100.4 to network 0.0.0.0
+
+S*    0.0.0.0/0 [1/0] via 10.81.100.4
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.81.100.0/24 is directly connected, Ethernet0/0
+L        10.81.100.8/32 is directly connected, Ethernet0/0
+CUCM-81#ping 10.92.1.10
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.92.1.10, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+CUCM-81#!ping must be successful
+CUCM-81#!
+CUCM-81#traceroute 10.92.1.10
+Type escape sequence to abort.
+Tracing the route to windowsServer-m92.RIVANTraining.com (10.92.1.10)
+VRF info: (vrf in name/id, vrf out name/id)
+  1 c3560cg.l3-coreBABA-v100.RIVANTraining.com (10.81.100.4) 0 msec 0 msec 0 msec
+  2 4321xrEdge-e00.RIVANTraining.com (10.81.81.1) 1 msec 0 msec 1 msec
+  3 4321xrEdge-m92-e01.RIVANTraining.com (200.0.0.92) 0 msec 1 msec 0 msec
+  4 c3560cg.l3-m92-e20.RIVANTraining.com (10.92.92.4) 1 msec 1 msec 0 msec
+  5  *  * 
+    windowsServer-m92.RIVANTraining.com (10.92.1.10) 2 msec
+CUCM-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# router ospf 1
+CUCM-81(config-router)# router-id 10.81.100.8
+CUCM-81(config-router)# network 10.81.100.0  0.0.0.255  area 0
+CUCM-81(config-router)# end
+CUCM-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# !
+CUCM-81(config)# !PC
+CUCM-81(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+CUCM-81(config)# !
+CUCM-81(config)# !CoreTAAS
+CUCM-81(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+CUCM-81(config)# ip host c3560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2
+CUCM-81(config)# ip host c3560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2
+CUCM-81(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2        
+CUCM-81(config)# !
+CUCM-81(config)# !CoreBABA
+CUCM-81(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+CUCM-81(config)# ip host c3560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4
+CUCM-81(config)# ip host c3560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4
+CUCM-81(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4        
+CUCM-81(config)# ip host c3560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4
+CUCM-81(config)# !
+CUCM-81(config)# !wlc
+CUCM-81(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+CUCM-81(config)# !
+CUCM-81(config)# !ap
+CUCM-81(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+CUCM-81(config)# !
+CUCM-81(config)# !cucm
+CUCM-81(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+CUCM-81(config)# !
+CUCM-81(config)# !eP1
+CUCM-81(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+CUCM-81(config)# !
+CUCM-81(config)# !eP2
+CUCM-81(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+CUCM-81(config)# !
+CUCM-81(config)# !c8
+CUCM-81(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+CUCM-81(config)# !
+CUCM-81(config)# !c6
+CUCM-81(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+CUCM-81(config)# !
+CUCM-81(config)# !edge
+CUCM-81(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+CUCM-81(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+CUCM-81(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+CUCM-81(config)# !
+CUCM-81(config)# !edge92
+CUCM-81(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+CUCM-81(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+CUCM-81(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+CUCM-81(config)# !
+CUCM-81(config)# !CoreBABA92
+CUCM-81(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+CUCM-81(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+CUCM-81(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+CUCM-81(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+CUCM-81(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+CUCM-81(config)# !
+CUCM-81(config)# !P92
+CUCM-81(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+CUCM-81(config)# end
+CUCM-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CUCM-81(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Unified Communications Manager Express 9.1
+ 
+############################################################
+ 
+CiscoB. Unified Communications Manager Express provides call 
+processing to Cisco Unified IP Phones for distributed enterprise 
+branch-office environments and retail deployments. Even branch 
+offices within the same enterprise can have different needs and 
+requirements when it comes to unified communications. 
+ 
+Cisco Unified Communications Manager Express delivers on this need 
+by providing localized call control, mobility, and conferencing 
+alongside data applications on Cisco Integrated Services Routers.
+ 
+############################################################
+ 
+ 
+ 
+ 
+|
+CUCM-81(config)#end
+CUCM-81#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+EDGE ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 39
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: 
+
+
+Press RETURN to get started!
+
+
+*Sep 19 12:45:43.751: %LINEPROTO-5-UPDOWN: Line protocol on Interface VoIP-Null0, changed state to up
+*Sep 19 12:45:43.752: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Sep 19 12:45:43.764: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Sep 19 12:45:43.764: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Sep 19 12:45:43.764: %LINK-3-UPDOWN: Interface Ethernet0/3, changed state to up
+*Sep 19 12:45:44.752: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to up
+*Sep 19 12:45:44.768: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to up
+*Sep 19 12:45:44.768: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to up
+*Sep 19 12:45:44.768: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to up
+*Sep 19 13:04:57.135: %LINK-5-CHANGED: Interface Ethernet0/0, changed state to administratively down
+*Sep 19 13:04:57.135: %LINK-5-CHANGED: Interface Ethernet0/1, changed state to administratively down
+*Sep 19 13:04:57.135: %LINK-5-CHANGED: Interface Ethernet0/2, changed state to administratively down
+*Sep 19 13:04:57.143: %LINK-5-CHANGED: Interface Ethernet0/3, changed state to administratively down
+*Sep 19 13:04:58.135: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to down
+*Sep 19 13:04:58.135: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to down
+*Sep 19 13:04:58.135: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to down
+*Sep 19 13:04:58.143: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to down
+*Sep 19 13:04:59.743: %IP-5-WEBINST_KILL: Terminating DNS process
+*Sep 19 13:04:59.911: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+*Sep 19 13:04:59.918: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Sep 19 13:04:59.918: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+Router>en
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)# hostname EDGE-81
+EDGE-81(config)# enable secret pass
+EDGE-81(config)# service password-encryption
+EDGE-81(config)# no logging console
+EDGE-81(config)# no ip domain-lookup
+EDGE-81(config)# line console 0
+EDGE-81(config-line)#  password pass
+EDGE-81(config-line)#  login
+EDGE-81(config-line)#  exec-timeout 0 0
+EDGE-81(config-line)# line vty 0 4
+EDGE-81(config-line)#  password pass
+EDGE-81(config-line)#  login
+EDGE-81(config-line)#  exec-timeout 0 0
+EDGE-81(config-line)# Int e0/0
+EDGE-81(config-if)#  description FIBEROPTIC-TO-SWITCH
+EDGE-81(config-if)#  ip add 10.81.81.1 255.255.255.0
+EDGE-81(config-if)#  no shutdown
+EDGE-81(config-if)# Int e0/1
+EDGE-81(config-if)#  description PLDT-ME-WAN
+EDGE-81(config-if)#  ip add 200.0.0.81 255.255.255.0
+EDGE-81(config-if)#  no shutdown
+EDGE-81(config-if)# Int Loopback 0
+EDGE-81(config-if)#  description VIRTUALIP-FOR-ROUTING
+EDGE-81(config-if)#  ip add 81.0.0.1 255.255.255.255
+EDGE-81(config-if)# end
+EDGE-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+EDGE-81(config)# ip routing 
+EDGE-81(config)# !--route to student 92's LAN
+EDGE-81(config)# ip route 10.92.0.0 255.255.0.0 200.0.0.92
+EDGE-81(config)# !
+EDGE-81(config)# !--route for edge to discover user 81's LAN
+EDGE-81(config)# ip route 10.81.0.0 255.255.0.0 10.81.81.4
+EDGE-81(config)# end
+EDGE-81#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks
+S        10.81.0.0/16 [1/0] via 10.81.81.4
+C        10.81.81.0/24 is directly connected, Ethernet0/0
+L        10.81.81.1/32 is directly connected, Ethernet0/0
+S        10.92.0.0/16 [1/0] via 200.0.0.92
+      81.0.0.0/32 is subnetted, 1 subnets
+C        81.0.0.1 is directly connected, Loopback0
+      200.0.0.0/24 is variably subnetted, 2 subnets, 2 masks
+C        200.0.0.0/24 is directly connected, Ethernet0/1
+L        200.0.0.81/32 is directly connected, Ethernet0/1
+EDGE-81#ping 10.92.1.10
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.92.1.10, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 1/1/1 ms
+EDGE-81#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+EDGE-81(config)# router ospf 1
+EDGE-81(config-router)# router-id 81.0.0.1
+EDGE-81(config-router)# network 200.0.0.0  0.0.0.255 area 0
+EDGE-81(config-router)# network 10.81.81.0  0.0.0.255 area 0
+EDGE-81(config-router)# network 81.0.0.1 0.0.0.0 area 0
+EDGE-81(config-router)# Interface e0/0
+EDGE-81(config-if)#  ip ospf network point-to-point
+EDGE-81(config-if)# end
+EDGE-81#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+EDGE-81(config)# !
+EDGE-81(config)# !PC
+EDGE-81(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+EDGE-81(config)# !
+EDGE-81(config)# !CoreTAAS
+EDGE-81(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+EDGE-81(config)# ip host c3560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2
+EDGE-81(config)# ip host c3560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2
+EDGE-81(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2        
+EDGE-81(config)# !
+EDGE-81(config)# !CoreBABA
+EDGE-81(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+EDGE-81(config)# ip host c3560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4
+EDGE-81(config)# ip host c3560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4
+EDGE-81(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4        
+EDGE-81(config)# ip host c3560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4
+EDGE-81(config)# !
+EDGE-81(config)# !wlc
+EDGE-81(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+EDGE-81(config)# !
+EDGE-81(config)# !ap
+EDGE-81(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+EDGE-81(config)# !
+EDGE-81(config)# !cucm
+EDGE-81(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+EDGE-81(config)# !
+EDGE-81(config)# !eP1
+EDGE-81(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+EDGE-81(config)# !
+EDGE-81(config)# !eP2
+EDGE-81(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+EDGE-81(config)# !
+EDGE-81(config)# !c8
+EDGE-81(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+EDGE-81(config)# !
+EDGE-81(config)# !c6
+EDGE-81(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+EDGE-81(config)# !
+EDGE-81(config)# !edge
+EDGE-81(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+EDGE-81(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+EDGE-81(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+EDGE-81(config)# !
+EDGE-81(config)# !edge92
+EDGE-81(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+EDGE-81(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+EDGE-81(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+EDGE-81(config)# !
+EDGE-81(config)# !CoreBABA92
+EDGE-81(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+EDGE-81(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+EDGE-81(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+EDGE-81(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+EDGE-81(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+EDGE-81(config)# !
+EDGE-81(config)# !P92
+EDGE-81(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+EDGE-81(config)# end
+EDGE-81#
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+EDGE92 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 40
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+
+ 
+ 
+##############################
+ 
+Cisco 4321 XR Edge Router
+ 
+############################################################
+ 
+The Cisco 4000 Family Integrated Services Router ISR 
+revolutionizes WAN communications in the enterprise branch. 
+With new levels of built-in intelligent network capabilities 
+and convergence. 
+ 
+It specifically addresses the growing need 
+for application-aware networking in distributed enterprise 
+sites.
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: This device has been preconfigured with IPv4 address 
+assignment, static routing, and OSPF.
+ 
+ 
+PASSWORD: pass
+ 
+ 
+
+
+User Access Verification
+
+Password: 
+EDGE-92>en
+Password: 
+EDGE-92#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+EDGE-92(config)# !
+EDGE-92(config)# !PC
+EDGE-92(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+EDGE-92(config)# !
+EDGE-92(config)# !CoreTAAS
+EDGE-92(config)# ip host c3560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2
+EDGE-92(config)# ip host c3560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2
+EDGE-92(config)# ip host c3560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2
+EDGE-92(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2        
+EDGE-92(config)# !
+EDGE-92(config)# !CoreBABA
+EDGE-92(config)# ip host c3560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4
+EDGE-92(config)# ip host c3560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4
+EDGE-92(config)# ip host c3560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4
+EDGE-92(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4        
+EDGE-92(config)# ip host c3560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4
+EDGE-92(config)# !
+EDGE-92(config)# !wlc
+EDGE-92(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+EDGE-92(config)# !
+EDGE-92(config)# !ap
+EDGE-92(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+EDGE-92(config)# !
+EDGE-92(config)# !cucm
+EDGE-92(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+EDGE-92(config)# !
+EDGE-92(config)# !eP1
+EDGE-92(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+EDGE-92(config)# !
+EDGE-92(config)# !eP2
+EDGE-92(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+EDGE-92(config)# !
+EDGE-92(config)# !c8
+EDGE-92(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+EDGE-92(config)# !
+EDGE-92(config)# !c6
+EDGE-92(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+EDGE-92(config)# !
+EDGE-92(config)# !edge
+EDGE-92(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+EDGE-92(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+EDGE-92(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+EDGE-92(config)# !
+EDGE-92(config)# !edge92
+EDGE-92(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+EDGE-92(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+EDGE-92(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+EDGE-92(config)# !
+EDGE-92(config)# !CoreBABA92
+EDGE-92(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+EDGE-92(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+EDGE-92(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+EDGE-92(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+EDGE-92(config)# ip host c3560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4
+EDGE-92(config)# !
+EDGE-92(config)# !P92
+EDGE-92(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+EDGE-92(config)# end
+EDGE-92#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+EDGE-92(config)# hostname EDGE-92
+EDGE-92(config)# enable secret pass
+EDGE-92(config)# service password-encryption
+EDGE-92(config)# no logging cons
+EDGE-92(config)# no ip domain lookup
+EDGE-92(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco 4321 XR Edge Router
+ 
+############################################################
+ 
+The Cisco 4000 Family Integrated Services Router ISR 
+revolutionizes WAN communications in the enterprise branch. 
+With new levels of built-in intelligent network capabilities 
+and convergence. 
+ 
+It specifically addresses the growing need 
+for application-aware networking in distributed enterprise 
+sites.
+ 
+############################################################
+ 
+ 
+ 
+*NOTE: This device has been preconfigured with IPv4 address 
+assignment, static routing, and OSPF.
+ 
+ 
+PASSWORD: pass
+ 
+ 
+|
+EDGE-92(config)# line cons 0
+EDGE-92(config-line)#  password pass
+EDGE-92(config-line)#  login
+EDGE-92(config-line)#  exec-timeout 0 0
+EDGE-92(config-line)# line vty 0 4
+EDGE-92(config-line)#  password pass 
+EDGE-92(config-line)#  login
+EDGE-92(config-line)#  exec-timeout 0 0
+EDGE-92(config-line)# int e0/1
+EDGE-92(config-if)#  ip add 200.0.0.92 255.255.255.0
+EDGE-92(config-if)#  no shut
+EDGE-92(config-if)#  desc OUTSIDE
+EDGE-92(config-if)# int e0/0
+EDGE-92(config-if)#  ip add 10.92.92.1 255.255.255.0
+EDGE-92(config-if)#  ip ospf network point-to-point
+EDGE-92(config-if)#  no shut
+EDGE-92(config-if)#  desc INSIDE
+EDGE-92(config-if)# int lo0
+EDGE-92(config-if)#  ip add 92.0.0.1 255.255.255.0
+EDGE-92(config-if)#  no shut
+EDGE-92(config-if)#  desc VIRTUAL-IP
+EDGE-92(config-if)# !
+EDGE-92(config-if)# !OSPF
+EDGE-92(config-if)# router ospf 1
+EDGE-92(config-router)#  router-id 92.0.0.1
+EDGE-92(config-router)#  network 200.0.0.0 0.0.0.255 area 0
+EDGE-92(config-router)#  network 10.92.92.0 0.0.0.255 area 0
+EDGE-92(config-router)#  network 92.0.0.1 0.0.0.0 area 0
+EDGE-92(config-router)#  exit
+EDGE-92(config)# !
+EDGE-92(config)# !Static Routing
+EDGE-92(config)# ip route 10.81.0.0 255.255.0.0 200.0.0.81
+EDGE-92(config)# ip route 10.92.0.0 255.255.0.0 10.92.92.4
+EDGE-92(config)# end
+EDGE-92#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CoreBABA92 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUXL2-ADVENTERPRISEK9-M), Version 15.2(CML_NIGHTLY_20190423)FLO_DSGS7, EARLY DEPLOYMENT DEVELOPMENT BUILD, synced to  V152_6_0_81_E
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Tue 23-Apr-19 02:38 by mmen
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 135059K bytes of memory.
+Processor board ID 41
+12 Ethernet interfaces
+128K bytes of NVRAM.
+
+
+
+Press RETURN to get started!
+
+% Generating 1024 bit RSA keys, keys will be non-exportable...
+[OK] (elapsed time was 0 seconds)
+Failed to generate persistent self-signed certificate.
+    Secure server will use temporary self-signed certificate.
+
+ 
+ 
+##############################
+ 
+Cisco Catalyst 3560 Switch
+ 
+############################################################
+ 
+The Cisco Catalyst 3560 Series is a line of fixed-configuration, 
+enterprise-class switches that include IEEE 802.3af and Cisco 
+prestandard Power over Ethernet (PoE) functionality in Fast Ethernet 
+and Gigabit Ethernet configurations.
+ 
+The Cisco Catalyst 3560 is an ideal access layer switch for small 
+enterprise LAN access or branch-office environments, combining both 
+10/100/1000 and PoE configurations for maximum productivity and 
+investment protection while enabling the deployment of new applications 
+such as IP telephony, wireless access, video surveillance, 
+building management systems, and remote video kiosks. 
+ 
+############################################################
+ 
+ 
+*NOTE: This device has been preconfigured with IPv4 address 
+assignment, VLANs, SVI, static routing, and OSPF
+ 
+ 
+PASSWORD: pass
+ 
+ 
+ 
+
+
+User Access Verification
+
+Password: 
+CoreBABA-92>en
+Password: 
+CoreBABA-92#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !PC
+CoreBABA-92(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !CoreTAAS
+CoreBABA-92(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2        
+CoreBABA-92(config)#$560cg.l3-coreTAAS-v10.RIVANTraining.com 10.81.10.2      
+CoreBABA-92(config)#$560cg.l3-coreTAAS-v50.RIVANTraining.com 10.81.50.2      
+CoreBABA-92(config)#$560cg.l3-coreTAAS-v100.RIVANTraining.com 10.81.100.2    
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !CoreBABA
+CoreBABA-92(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4        
+CoreBABA-92(config)#$560cg.l3-coreBABA-v10.RIVANTraining.com 10.81.10.4      
+CoreBABA-92(config)#$560cg.l3-coreBABA-v50.RIVANTraining.com 10.81.50.4      
+CoreBABA-92(config)#$560cg.l3-coreBABA-v100.RIVANTraining.com 10.81.100.4    
+CoreBABA-92(config)#$560cg.l3-coreBABA-e20.RIVANTraining.com 10.81.81.4      
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !wlc
+CoreBABA-92(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !ap
+CoreBABA-92(config)# ip host 2702-AironetAP.RIVANTraining.com 10.81.10.3
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !cucm
+CoreBABA-92(config)# ip host cucm-Express9.1.RIVANTraining.com 10.81.100.8
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !eP1
+CoreBABA-92(config)# ip host 8945ipPhone1.RIVANTraining.com 10.81.100.101
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !eP2
+CoreBABA-92(config)# ip host 8945ipPhone2.RIVANTraining.com 10.81.100.102
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !c8
+CoreBABA-92(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !c6
+CoreBABA-92(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !edge
+CoreBABA-92(config)# ip host 4321xrEdge-e00.RIVANTraining.com 10.81.81.1
+CoreBABA-92(config)# ip host 4321xrEdge-e01.RIVANTraining.com 200.0.0.81
+CoreBABA-92(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !edge92
+CoreBABA-92(config)# ip host 4321xrEdge-m92-e01.RIVANTraining.com 200.0.0.92
+CoreBABA-92(config)# ip host 4321xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1
+CoreBABA-92(config)# ip host 4321xrEdge-m92-e00.RIVANTraining.com 10.92.92.1
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !CoreBABA92
+CoreBABA-92(config)# ip host c3560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4
+CoreBABA-92(config)# ip host c3560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4
+CoreBABA-92(config)# ip host c3560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4
+CoreBABA-92(config)# ip host c3560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4
+CoreBABA-92(config)#$560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4         
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !P92
+CoreBABA-92(config)# ip host windowsServer-m92.RIVANTraining.com 10.92.1.10
+CoreBABA-92(config)# end
+CoreBABA-92#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CoreBABA-92(config)# hostname CoreBABA-92
+CoreBABA-92(config)# enable secret pass
+CoreBABA-92(config)# service password-encryption
+CoreBABA-92(config)# no logging cons
+CoreBABA-92(config)# no ip domain lookup
+CoreBABA-92(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+ 
+##############################
+ 
+Cisco Catalyst 3560 Switch
+ 
+############################################################
+ 
+The Cisco Catalyst 3560 Series is a line of fixed-configuration, 
+enterprise-class switches that include IEEE 802.3af and Cisco 
+prestandard Power over Ethernet (PoE) functionality in Fast Ethernet 
+and Gigabit Ethernet configurations.
+ 
+The Cisco Catalyst 3560 is an ideal access layer switch for small 
+enterprise LAN access or branch-office environments, combining both 
+10/100/1000 and PoE configurations for maximum productivity and 
+investment protection while enabling the deployment of new applications 
+such as IP telephony, wireless access, video surveillance, 
+building management systems, and remote video kiosks. 
+ 
+############################################################
+ 
+ 
+*NOTE: This device has been preconfigured with IPv4 address 
+assignment, VLANs, SVI, static routing, and OSPF
+ 
+ 
+PASSWORD: pass
+ 
+ 
+ 
+|
+CoreBABA-92(config)# line cons 0
+CoreBABA-92(config-line)#  password pass
+CoreBABA-92(config-line)#  login
+CoreBABA-92(config-line)#  exec-timeout 0 0
+CoreBABA-92(config-line)# line vty 0 4
+CoreBABA-92(config-line)#  password pass 
+CoreBABA-92(config-line)#  login
+CoreBABA-92(config-line)#  exec-timeout 0 0
+CoreBABA-92(config-line)# vlan 10
+CoreBABA-92(config-vlan)#  name WIRELESS
+CoreBABA-92(config-vlan)# vlan 50
+CoreBABA-92(config-vlan)#  name CCTV
+CoreBABA-92(config-vlan)# vlan 100
+CoreBABA-92(config-vlan)#  name VOICE
+CoreBABA-92(config-vlan)# int vlan 1
+CoreBABA-92(config-if)#  ip add 10.92.1.4 255.255.255.0
+CoreBABA-92(config-if)#  no shut
+CoreBABA-92(config-if)# int vlan 10
+CoreBABA-92(config-if)#  ip add 10.92.10.4 255.255.255.0
+CoreBABA-92(config-if)#  no shut
+CoreBABA-92(config-if)# int vlan 50
+CoreBABA-92(config-if)#  ip add 10.92.50.4 255.255.255.0
+CoreBABA-92(config-if)#  no shut
+CoreBABA-92(config-if)# int vlan 100
+CoreBABA-92(config-if)#  ip add 10.92.100.4 255.255.255.0
+CoreBABA-92(config-if)#  no shut
+CoreBABA-92(config-if)# int e2/0
+CoreBABA-92(config-if)#  no sw
+CoreBABA-92(config-if)#  ip add 10.92.92.4 255.255.255.0
+CoreBABA-92(config-if)#  ip ospf network point-to-point
+CoreBABA-92(config-if)#  no shut
+CoreBABA-92(config-if)# int e0/0
+CoreBABA-92(config-if)#  sw mo ac
+CoreBABA-92(config-if)#  sw ac vlan 1
+CoreBABA-92(config-if)# ip routing
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !OSPF Routing
+CoreBABA-92(config)# router ospf 1
+CoreBABA-92(config-router)#  router-id 10.92.92.4
+CoreBABA-92(config-router)#  network 10.92.0.0 0.0.255.255 area 0
+CoreBABA-92(config-router)#  exit
+CoreBABA-92(config)# !
+CoreBABA-92(config)# !Static Routing
+CoreBABA-92(config)# ip route 0.0.0.0 0.0.0.0 10.92.92.1
+CoreBABA-92(config)# end
+CoreBABA-92#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+P92 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.7(3)M2, DEVELOPMENT TEST SOFTWARE
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Mar-18 11:18 by prod_rel_team
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Linux Unix (Intel-x86) processor with 76825K bytes of memory.Installed image archive
+
+Processor board ID 42
+4 Ethernet interfaces
+128K bytes of NVRAM.
+
+% Hostname "WINSERVER2022-PC  " is not a legal LAT node name, Using "CISCO_002A00"
+
+
+Press RETURN to get started!
+
+
+ 
+##############################
+ 
+WINDOWS SERVER 2022
+ 
+############################################################
+ 
+Windows Server 2022 introduces advanced multi-layer security, 
+hybrid capabilities with Azure, and a flexible 
+application platform.
+ 
+It includes significant improvements to Windows containers, 
+such as smaller image sizes for faster download, simplified 
+network policy implementation and containerization tools for 
+.NET applications.
+ 
+############################################################
+ 
+ 
+ 
+PASSWORD: C1sc0123
+ 
+ 
+
+WinServer2022-PC92>en
+Password: 
+WinServer2022-PC92#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !PC
+WinServer2022-PC92(config)# ip host winServer22.RIVANTraining.com 10.81.1.10
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !CoreTAAS
+WinServer2022-PC92(config)#$560cg.l3-coreTAAS-v1.RIVANTraining.com 10.81.1.2 
+WinServer2022-PC92(config)#$oreTAAS-v10.RIVANTraining.com 10.81.10.2         
+WinServer2022-PC92(config)#$oreTAAS-v50.RIVANTraining.com 10.81.50.2         
+WinServer2022-PC92(config)#$oreTAAS-v100.RIVANTraining.com 10.81.100.2       
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !CoreBABA
+WinServer2022-PC92(config)#$560cg.l3-coreBABA-v1.RIVANTraining.com 10.81.1.4 
+WinServer2022-PC92(config)#$oreBABA-v10.RIVANTraining.com 10.81.10.4         
+WinServer2022-PC92(config)#$oreBABA-v50.RIVANTraining.com 10.81.50.4         
+WinServer2022-PC92(config)#$oreBABA-v100.RIVANTraining.com 10.81.100.4       
+WinServer2022-PC92(config)#$oreBABA-e20.RIVANTraining.com 10.81.81.4         
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !wlc
+WinServer2022-PC92(config)# ip host 1815i-WLC.RIVANTraining.com 10.81.10.81
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !ap
+WinServer2022-PC92(config)#$02-AironetAP.RIVANTraining.com 10.81.10.3        
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !cucm
+WinServer2022-PC92(config)#$cm-Express9.1.RIVANTraining.com 10.81.100.8      
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !eP1
+WinServer2022-PC92(config)#$45ipPhone1.RIVANTraining.com 10.81.100.101       
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !eP2
+WinServer2022-PC92(config)#$45ipPhone2.RIVANTraining.com 10.81.100.102       
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !c8
+WinServer2022-PC92(config)# ip host ipDomeCam8.RIVANTraining.com 10.81.50.8
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !c6
+WinServer2022-PC92(config)# ip host ipDomeCam6.RIVANTraining.com 10.81.50.6
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !edge
+WinServer2022-PC92(config)#$21xrEdge-e00.RIVANTraining.com 10.81.81.1        
+WinServer2022-PC92(config)#$21xrEdge-e01.RIVANTraining.com 200.0.0.81        
+WinServer2022-PC92(config)# ip host 4321xrEdge-lo0.RIVANTraining.com 81.0.0.1
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !edge92
+WinServer2022-PC92(config)#$21xrEdge-m92-e01.RIVANTraining.com 200.0.0.92    
+WinServer2022-PC92(config)#$21xrEdge-m92-lo0.RIVANTraining.com 92.0.0.1      
+WinServer2022-PC92(config)#$21xrEdge-m92-e00.RIVANTraining.com 10.92.92.1    
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !CoreBABA92
+WinServer2022-PC92(config)#$560cg.l3-m92-e20.RIVANTraining.com 10.92.92.4    
+WinServer2022-PC92(config)#$560cg.l3-m92-v1.RIVANTraining.com 10.92.1.4      
+WinServer2022-PC92(config)#$560cg.l3-m92-v10.RIVANTraining.com 10.92.10.4    
+WinServer2022-PC92(config)#$560cg.l3-m92-v50.RIVANTraining.com 10.92.50.4    
+WinServer2022-PC92(config)#$560cg.l3-m92-v100.RIVANTraining.com 10.92.100.4  
+WinServer2022-PC92(config)# !
+WinServer2022-PC92(config)# !P92
+WinServer2022-PC92(config)#$ndowsServer-m92.RIVANTraining.com 10.92.1.10     
+WinServer2022-PC92(config)# end
+WinServer2022-PC92#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+WinServer2022-PC92(config)# hostname WinServer2022-PC92
+% Hostname "WINSERVER2022-PC  " is not a legal LAT node name, Using "CISCO_002A00"
+WinServer2022-PC92(config)# enable secret C1sc0123
+WinServer2022-PC92(config)# service password-encryption
+WinServer2022-PC92(config)# no logging cons
+WinServer2022-PC92(config)# no ip domain lookup
+WinServer2022-PC92(config)# banner motd |
+Enter TEXT message.  End with the character '|'.
+ 
+##############################
+ 
+WINDOWS SERVER 2022
+ 
+############################################################
+ 
+Windows Server 2022 introduces advanced multi-layer security, 
+hybrid capabilities with Azure, and a flexible 
+application platform.
+ 
+It includes significant improvements to Windows containers, 
+such as smaller image sizes for faster download, simplified 
+network policy implementation and containerization tools for 
+.NET applications.
+ 
+############################################################
+ 
+ 
+ 
+PASSWORD: C1sc0123
+ 
+ 
+|
+WinServer2022-PC92(config)# line cons 0
+WinServer2022-PC92(config-line)#  password C1sc0123
+WinServer2022-PC92(config-line)#  no login
+WinServer2022-PC92(config-line)#  exec-timeout 0 0
+WinServer2022-PC92(config-line)# line vty 0 4
+WinServer2022-PC92(config-line)#  password C1sc0123
+WinServer2022-PC92(config-line)#  login
+WinServer2022-PC92(config-line)#  exec-timeout 0 0
+WinServer2022-PC92(config-line)# int e0/0
+WinServer2022-PC92(config-if)#  ip add 10.92.1.10 255.255.255.0
+WinServer2022-PC92(config-if)#  no shut
+WinServer2022-PC92(config-if)# ip route 0.0.0.0 0.0.0.0 10.92.1.4
+WinServer2022-PC92(config)#  end
+WinServer2022-PC92#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
