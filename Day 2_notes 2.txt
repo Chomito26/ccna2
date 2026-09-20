@@ -1,0 +1,52 @@
+SUBNETTING EXAM QUESTION:
+
+Accenture is one of the largest BPO Companies....
+they inested xxxx....
+as a network engineer, desing and configure the domain Accenture.com with 1500 personel.
+
+
+Which of the following CIDR is preferable to implement.
+
+a. 10.0.0.0/8
+b. 10.0.8.0/21
+c. 10.0.10.0/18
+d. 10.100.10.0/10
+
+To solve this question... we use Rivan's CSI Method
+
+C = Convert it - 1500 = 11bits
+S = Subract it -  /32 - /11 = /21 (3rd, 8i)
+I = Ipasok sa Hiwa - Ipasok sa 3rd si 8i
+
+Accenture.com Network
+Network: 10.0.8.0/21
+First: 10.0.8.1/21
+Last: 10.0.15.254/21
+Broadcast: 10.0.15.255/21
+notAccenture.com: 10.0.16.0/21
+Mask Address: 255.255.248.0
+
+
+
+
+
+
+
+195 - 8 bits
+13 - 4 bits
+1750 - 11 bits
+1855 - 11 bits
+2700 - 12 bits
+2 - 2 bits
+376 - 9 bits
+888 - 10 bits
+8 - 4 bits
+212 - 8 bits
+4500 - 13 bits
+81 - 7 bits
+20000 - 15 bits
+55 - 6 bits
+
+
+37 - 6 bits
+177 - 8 bits
