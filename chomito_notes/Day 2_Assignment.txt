@@ -1,0 +1,190 @@
+128	192	224	240	248	252	254	255
+128i	64i	32i	16i	8i	4i	2i	1i
+
+
+1	2	3	4	5	6	7	8
+9	10	11	12	13	14	15	16
+17	18	19	20	21	22	23	24
+25	26	27	28	29	30	31	32
+
+
+
+
+32k	16k	8k	4k	2k	1k	512	256	128	64	32	16	8	4	2	1
+
+16bit	15bit	14bit	13bit	12bit	11bit	10bit	9bit	8bit	7bit	6bit	5bit	4bit	3bit	2bit	1bit
+
+
+
+
+
+
+
+
+
+
+!A2-P2
+1st Subnet
+C = 970 > 10bit
+S = /32 - /10 = /22 (3rd, 4i)
+I = 255.255.252.0
+10.55.252.0/22
+
+MYO = 970
+Network IP: 10.55.252.0/22
+First Usable: 10.55.252.1/22
+Last Usable: 10.55.255.254/22
+Broadcast: 10.55.255.255/22
+
+!A2
+config t
+vlan 970
+ name MYOB.COM
+ exit
+Int vlan 970
+no shut
+ip add 10.55.252.1 255.255.252.0
+ip dhcp excluded-add 10.55.252.1 10.55.252.22
+ip dhcp pool MYOB.COM
+ network 10.55.252.0 255.255.252.0
+ default-router 10.55.252.1
+
+ Int e1/0
+  swi access vlan 970
+  end
+
+!P2
+conf t
+ int e1/0
+ ip add dhcp
+ shut
+ no shut 
+ end
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+!D2-S2
+2nd subnet
+C = 233 > 8bit
+S = /32 - /8 = /24 (3rd, 1i)
+I = 255.255.255.0
+10.56.0.0/24
+
+
+CDC =  233
+Network IP: 10.56.0.0/24
+First Usable: 10.56.0.1/24
+Last Usable: 10.56.0.254/24
+Broadcast: 10.56.0.255/24
+
+!D2
+config t
+vlan 233
+ name CRYPTO.COM
+ exit
+Int vlan 233
+no shut
+ip add 10.56.0.1 255.255.255.0
+ip dhcp excluded-add 10.56.0.1 10.56.0.18
+ip dhcp pool CRYPTO.COM
+ network 10.56.0.0 255.255.255.0
+ default-router 10.56.0.1
+
+ Int e1/0
+  swi access vlan 233
+  end
+
+!S2
+conf t
+ int e1/0
+ ip add dhcp
+ shut
+ no shut 
+ end
+
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+!D1-S1
+3 subnet
+C = 160 > 8bit
+S = /32 - /8 = /24 (3rd, 1i)
+I = 255.255.255.0
+10.56.1.0/24
+
+GEN = 160
+Network IP:10.56.1.0/24
+First Usable:10.56.1.1/24
+Last Usable:10.56.1.254/24
+Broadcast:10.56.1.255/24
+
+!D1
+config t
+vlan 160
+ name GENERALI.COM
+ exit
+Int vlan 160
+no shut
+ip add 10.56.1.1 255.255.255.0
+ip dhcp excluded-add 10.56.1.1 10.56.1.10
+ip dhcp pool GENERALI.COM
+ network 10.56.1.0 255.255.255.0
+ default-router 10.56.1.1
+
+ Int e1/0
+  swi access vlan 160
+  end
+
+!S1
+conf t
+ int e1/0
+ ip add dhcp
+ shut
+ no shut 
+ end
+
++++++++++++++++++++++++++++++++++++++++++++
+
+!A1-P1
+4th subnet
+
+C = 70 > 7bit
+S = /32 - /7 = /25 (4th, 128i)
+I = 255.255.255.128
+
+10.56.2.0/25
+
+
+WRL = 70
+Network IP:10.56.2.0/25
+First Usable: 10.56.2.1/25
+Last Usable: 10.56.2.126/25
+Broadcast:10.56.2.127/25
+notCONCENTRIX.COM:10.56.2.128/25
+
+
+
+!A1
+config t
+vlan 70
+ name WORLDLINE.COM
+ exit
+Int vlan 70
+no shut
+ip add 10.56.2.1 255.255.255.128
+ip dhcp excluded-add 10.56.2.1 10.56.2.7
+ip dhcp pool WORLDLINE.COM
+ network 10.56.2.0 255.255.255.128
+ default-router 10.56.2.1
+
+ Int e0/0
+  swi access vlan 70
+  end
+
+!P1
+conf t
+ int e0/0
+ ip add dhcp
+ shut
+ no shut 
+ end
