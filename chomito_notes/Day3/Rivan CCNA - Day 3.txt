@@ -1,0 +1,78 @@
+Rivan CCNA - Day 3
+
+Rivan corporate office uses four floors in a building, design and implement with 10.100.10.0 IP.
+* Floor 1 has 50 users (VLAN101)
+* Floor 2 has 30 users (VLAN102)
+* Floor 3 has 14 users (VLAN103)
+* Floor 4 has 6 users (VLAN104)
+
+@floor1 (VLAN101)
+C: 50 = 6 bits
+S: /32 - /6 = 26 (4th, 64i) 255.255.255.192
+I: Ipasok sa 4th si 64
+
+N: 10.100.10.64/26
+F: 10.100.10.65/26
+L: 10.100.10.126/26
+B: 10.100.10.127/26
+
+@floor2 (VLAN102)
+C: 30 = 5 bits
+S: /32 - /5 = 27 (4th, 32i) 255.255.255.224
+I: Ipasok sa 4th si 32
+
+N: 10.100.10.128/27
+F: 10.100.10.129/27
+L: 10.100.10.158/27
+B: 10.100.10.159/27
+
+@floor3 (VLAN103)
+C: 14 = 4 bits
+S: /32 - /4 = 28 (4th, 16i) 255.255.255.240
+I: Ipasok sa 4th si 16
+
+N: 10.100.10.160/28
+F: 10.100.10.161/28
+L: 10.100.10.174/28
+B: 10.100.10.175/28
+
+@floor4 (VLAN104)
+C: 6 = 3 bits
+S: /32 - /3 = 29 (4th, 8i) 255.255.255.248
+I: Ipasok sa 4th si 8
+
+N: 10.100.10.176/29
+F: 10.100.10.177/29
+L: 10.100.10.182/29
+B: 10.100.10.183/29
+notRivanCorp: 10.100.10.184/29
+
+
+@A1
+Conf t
+ vlan 101
+ name vlan101.com
+ exit
+ int vlan 101
+ ip add 10.100.10.65 255.255.255.192
+ no shut
+
+ ip dhcp excluded-address 10.100.10.65 10.100.10.70
+ ip dhcp pool vlan101.com
+ network 10.100.10.64 255.255.255.192
+ default-router 10.100.10.65
+
+
+ int e0/0
+ switchport mode access
+ switchport access vlan 101
+ no shut
+ end
+
+
+@P1
+conf t
+ int e0/0
+ ip add dhcp
+ no shut
+ end

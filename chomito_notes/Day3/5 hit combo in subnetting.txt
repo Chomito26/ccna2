@@ -1,0 +1,47 @@
+5 hit combo in subnetting (for finding the number of subnets)
+
+Design and implement 10.100.10.0 network for 5 departments
+
+C: convert 5 departments to bits = 3 bits
+A: Add /24 + /3 = /27 (4th, 32i) 255.255.255.224
+I: Ipasok si 32 sa kada 4th octet
+
+1st: 10.100.10.32/27
+2nd: 10.100.10.64/27
+3rd: 10.100.10.96/27
+4th: 10.100.10.128/27
+5th: 10.100.10.160/27
+
+(If itotodo si /27...extra 4th and 5th combo)
+
+
+6th: 10.100.10.192/27
+7th: 10.100.10.224/27
+8th: 10.100.10.0/27
+
+Implement (R4):
+
+conf t
+ int lo101
+ ip add 10.100.10.33 255.255.255.224
+
+ int lo102
+ ip add 10.100.10.65 255.255.255.224
+
+ int lo103
+ ip add 10.100.10.96 255.255.255.224
+
+ int lo104
+ ip add 10.100.10.129 255.255.255.224
+
+ int lo105
+ ip add 10.100.10.161 255.255.255.224
+
+ int lo106
+ ip add 10.100.10.192 255.255.255.224
+
+ int lo107
+ ip add 10.100.10.225 255.255.255.224
+
+ int lo100
+ ip add 10.100.10.1 255.255.255.224
