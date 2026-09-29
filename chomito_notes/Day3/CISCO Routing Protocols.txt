@@ -290,7 +290,7 @@ conf t
  network 208.8.8.0 mask 255.255.255.0
  network 207.7.7.0 mask 255.255.255.0
  network 209.9.9.0 mask 255.255.255.0
- network 210.1.1.0 mask 255.255.255.252
+ network 10.1.1.0 mask 255.255.255.252
 end
 
 @I1-Converge
