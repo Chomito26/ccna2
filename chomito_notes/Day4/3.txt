@@ -1,0 +1,61 @@
+IR-ElasticSys
+
+root
+C1sc0123
+
+ip addr
+
+
+task 1: how to a 60k starting even if your not qualified: fake it, till you get it.
+lessthan35k: http://208.8.8.133/otrs/customer.pl
+                  user1 C1sc0123
+
+
+incident response/analyst
+
+evil twin attack
+
+
+Use 7 OSI later to steal sexvids
+Physical layer: wifi: be on the same wifi network: evil twin:
+
+netsh wlan show profile name="3F-Rivan" key=clear
+
+L2: nmap -sP 10.3.3.0/24
+L3: ip address
+L4: ports: 
+Sa-sa-e = SynAck
+
+how an attack happens: 3 way handskake:
+hacker
+tcp.flags.syn == 1 &&
+---SYN --->L5:
+< --- ACK ---
+---ACL 
+
+
+dageourous port for Windows 445 and 135 - Mitre attack
+
+
+attack mitre.org
+
+
+netstat -n -p tcp | findstr 445
+
+
+L5: SESSION LAYER:
+net use \\10.3.3.111\ipc$ 
+
+
+L6: .jpg
+L7: windows explorer app:
+     net use x: /delete
+     net use x: \\10.3.3.111\c$
+
+
+     net use R: /delete
+     net use R: \\10.3.3.122\c$
+
+
+
+SOC L3/L4: http://208.8.8.133/otrs/index.pl

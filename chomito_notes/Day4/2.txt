@@ -1,0 +1,4 @@
+conf t
+ ip domain name keyonepiece
+ crypto key generate rsa modulus 1024
+end

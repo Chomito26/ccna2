@@ -1,0 +1,141 @@
+!Creating your first packet filter firewall:
+FERRARI/LAMBO VS TOYOTA VIOS VS EBIKE:NWOW
+
+TASK 4: CREATE A PACKET FILTER FIREWALL:
+EX1. CREATE A FIREWALL POLICY THAT WILL ALLOW:
+bet10.com will open http,https 80, 443
+bet11.com will open ssh, dns, https 22,53,443
+  formula: PROTOCOL HACKER VICTIM PORT {if}
+	tcp - Data
+	udp - voice
+        icmp - ping
+        ip - any
+
+config t
+no ip access-list extended FW1
+ip access-list extended FW1
+ permit tcp any host bet10.com eq 80
+ permit tcp any host bet10.com eq 443
+ permit tcp any host bet11.com eq 22
+ permit tcp any host bet11.com eq 53
+ permit tcp any host bet11.com eq 443
+ int gi 3
+   ip access-group FW1 in
+   do sh ip access-list FW1
+
+EX1. CREATE A FIREWALL POLICY THAT WILL ALLOW: FW2
+bet10.com will open 22,23,443,PING
+bet11.com will open 80,443,SIP,H323,SCCP
+
+config t
+no ip access-list extended FW2
+ip access-list extended FW2
+ permit tcp any host bet10.com eq 22
+ permit tcp any host bet10.com eq 23
+ permit tcp any host bet10.com eq 443
+ permit icmp any host bet10.com
+ permit tcp any host bet11.com eq 80
+ permit tcp any host bet11.com eq 443
+ permit tcp any host bet11.com eq 5060
+ permit tcp any host bet11.com eq 1720
+ permit tcp any host bet11.com eq 2000
+ int gi 3
+   ip access-group FW2 in
+   do sh ip access-list FW2
+
+
+TASK 5: HOW TO PROPERLY PROTECT YOUR GAMBLING WEBSITE TO GET A ARTISTA GF. Use NAT/PAT:
+network address translation + port address translation
+
+private:insideLocal			public:ousideglobal:betlog.com
+bet10.com 192.168.103.10:80		208.8.8.69:80
+bet10.com 192.168.103.10:443		208.8.8.69:8443
+bet11.com 192.168.103.11:80		208.8.8.69:8080
+bet11.com 192.168.103.11:443		208.8.8.69:443
+
+
+config t
+no access-list 8
+access-list 8 permit host 192.168.103.10
+access-list 8 permit host 192.168.103.11
+ip host betlog.com 208.8.8.69
+Int Gi 3
+ ip nat Inside
+Int gi 1
+ ip nat Outside
+IP Nat inside source static tcp 192.168.103.10 80 208.8.8.69 80
+IP Nat inside source static tcp 192.168.103.10 443 208.8.8.69 8443
+IP Nat inside source static tcp 192.168.103.11 80 208.8.8.69 8080
+IP Nat inside source static tcp 192.168.103.11 443 208.8.8.69 443
+IP nat inside source list 8 int gi 1 Overload
+end
+show ip nat translation
+
+
+
+
+TASK6: WHAT CAREER IS PWEDE FOR YOU:
+switching,routing:eigrp,ospf,bgp = network engineer/analyst 23-32k
+fw, vpn, hacking, cybersec, IR = SOC analyst, SOC engineer: 30k-60k
+fortinet
+
+
+*docker container
+
+
+TASK7: WHAT ARE DOCKER CONTAINERIZATION:
+	"WHAT OS IS BEST TO USE: LINUX apps. 
+
+
+
+*postman.com
+
+
+python automation
+
+
+
+TASK8: PYTHON AUTOMATION IN CISCO:
+
+import cli
+var1 = '''hostname NETDEVOPS
+int loop 4
+ip add 4.4.4.4 255.255.255.255
+int loop 5
+ip add 5.5.5.5 255.255.255.255
+int loop 6
+ip add 6.6.6.6 255.255.255.255
+end
+'''
+cli.configurep(var1)
+
+
+import cli
+cmd3 = '''
+    ip dhcp pool MINILINUX
+    network 192.168.102.0 255.255.255.0
+    default-router 192.168.102.11
+    domain-name MINILINUX.COM
+    dns-server 8.8.8.8
+    END
+'''
+cli.configurep(cmd3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
