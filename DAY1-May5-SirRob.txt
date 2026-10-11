@@ -440,6 +440,7 @@ crypto key generate rsa
 !i type mo 1024 WAG 512 na default kc di ako bobo
 ip ssh version 2
 
+
  !!!STATIC ROUTING FOR MININUM WAGERS: 645php/day
  !!! EDGE route NOT dikit to ClassMate:
 conf t
